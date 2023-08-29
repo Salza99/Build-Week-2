@@ -8,7 +8,7 @@ const caricaArtista = () => {
     .then((artistObj) => {
       const content = document.getElementById("js-main-content");
       content.innerHTML = `
-        <div class="d-flex justify-content-between z-1 sticky-top end-0 start-0">
+        <div class="d-flex justify-content-between z-1 sticky-top end-0 start-0 pt-2">
         <div><i class="bi bi-arrow-left-circle-fill me-2"></i> <i class="bi bi-arrow-right-circle-fill"></i></div>
   
         <div class="dropdown">
