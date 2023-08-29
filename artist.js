@@ -1,4 +1,4 @@
-const eventId = new URLSearchParams(window.location.search).get("eventId"); /* piglio l'ID*/
+const artistId = new URLSearchParams(window.location.search).get("artistId"); /* piglio l'ID*/
 
 const caricaArtista = () => {
   fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/1")
