@@ -59,6 +59,14 @@ const caricaArtista = () => {
         })
         .then((artistData) => {
           for (let i = 0; i < artistData.data.length; i++) {
+            const durata = artistData.data[i].duration;
+            let secondi = durata % 60;
+            const minuti = ((durata - secondi) / 60) % 60;
+            if (secondi < 10) {
+              secondi = "0" + secondi;
+            }
+            const durataTracce = `${minuti} : ${secondi}`;
+
             albumSection.innerHTML += `
         <div class="row align-items-center justify-content-between mb-2">
             <div class="d-flex col-8 align-items-center justify-content-start">
@@ -67,7 +75,7 @@ const caricaArtista = () => {
               <div>${artistData.data[i].title}</div>
             </div>
             <div class="col-2">${artistData.data[i].rank}</div>
-            <div class="col-2">${artistData.data[i].duration}</div>
+            <div class="col-2">${durataTracce}</div>
           </div>
                 `;
           }
