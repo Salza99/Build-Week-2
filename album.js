@@ -1,4 +1,5 @@
-const loadPageAlbum = async id => {
+const loadPageAlbum = async (id) => {
+  loadMusic();
   const URL = "https://striveschool-api.herokuapp.com/api/deezer/album/";
   let albumObj = await fetch(URL + id);
   let album = await albumObj.json();
