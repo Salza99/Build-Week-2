@@ -3,11 +3,12 @@ const app = () => {
   const albumId = new URLSearchParams(window.location.search).get("albumId");
 
   if (artistId) {
-    //CARICA ARTISTA
+    caricaArtista();
   } else if (albumId) {
-    //CARICA ALBUM
+    loadPageAlbum(albumId);
   } else {
-    //CARICA HOME
+    loadHome();
   }
 };
+app();
 //app la chiamiamo ad ogni eventListener('click', app);

@@ -1,23 +1,24 @@
-const URL = "https://striveschool-api.herokuapp.com/api/deezer/album/";
-const idBohemian = "75621062";
-const idHybridTheory = "81763";
-const idTheEminemShow = "103248";
-const idDYSTOPIA = "472171155";
-const idScorpion = "69319552";
-const idXXX = "58972642";
-const idMilanoDemons = "379835987";
-const idMadreperla = "396100347";
-const idGemelli = "154545792";
-const idINNOCENTE = "446034935";
-window.onload = async () => {
+const loadHome = async () => {
+  const URL = "https://striveschool-api.herokuapp.com/api/deezer/album/";
+  const idBohemian = "75621062";
+  const idHybridTheory = "81763";
+  const idTheEminemShow = "103248";
+  const idDYSTOPIA = "472171155";
+  const idScorpion = "69319552";
+  const idXXX = "58972642";
+  const idMilanoDemons = "379835987";
+  const idMadreperla = "396100347";
+  const idGemelli = "154545792";
+  const idINNOCENTE = "446034935";
+
   try {
     const resp = await fetch(URL + idINNOCENTE, { method: "GET" });
     const albumObj = await resp.json();
     document.getElementById("imgHead").src = albumObj.cover;
     const divHead = document.getElementById("headDetails");
     divHead.innerHTML = ` <p>ALBUM</p>
-    <a href="#" class="text-decoration-none"><h2 class="fs-1">${albumObj.title}</h2></a>
-    <a href="#" class="text-decoration-none"><p>${albumObj.contributors[0].name}</p></a>
+    <a href="index.html?albumId=446034935" class="text-decoration-none"><h2 class="fs-1">${albumObj.title}</h2></a>
+    <a href="index.html?artistId=1" class="text-decoration-none"><p>${albumObj.contributors[0].name}</p></a>
     <p>Ascolta il nuovo album di <a href="#" class="text-decoration-none"> ${albumObj.contributors[0].name} </a></p>
     <button class="btn btn-success rounded-pill px-4 py-2">Play</button>
     <button class="btn btn-outline-light rounded-pill px-4 py-2 ms-3">Salva</button>
