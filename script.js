@@ -1,4 +1,5 @@
 const loadHome = async () => {
+  loadMusic();
   const URL = "https://striveschool-api.herokuapp.com/api/deezer/album/";
   const idBohemian = "75621062";
   const idHybridTheory = "81763";
