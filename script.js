@@ -1,23 +1,74 @@
-const URL = "https://striveschool-api.herokuapp.com/api/deezer/album/";
-const idBohemian = "75621062";
-const idHybridTheory = "81763";
-const idTheEminemShow = "103248";
-const idDYSTOPIA = "472171155";
-const idScorpion = "69319552";
-const idXXX = "58972642";
-const idMilanoDemons = "379835987";
-const idMadreperla = "396100347";
-const idGemelli = "154545792";
-const idINNOCENTE = "446034935";
-window.onload = async () => {
+const loadHome = async () => {
+  const URL = "https://striveschool-api.herokuapp.com/api/deezer/album/";
+  const idBohemian = "75621062";
+  const idHybridTheory = "81763";
+  const idTheEminemShow = "103248";
+  const idDYSTOPIA = "472171155";
+  const idScorpion = "69319552";
+  const idXXX = "58972642";
+  const idMilanoDemons = "379835987";
+  const idMadreperla = "396100347";
+  const idGemelli = "154545792";
+  const idINNOCENTE = "446034935";
+  const mainContent = document.getElementById("js-main-content");
+  mainContent.innerHTML = `
+  <div class="d-flex justify-content-between container sticky-top end-0 start-0">
+  <div>
+    <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
+    <i class="bi bi-arrow-right-circle-fill text-white"></i>
+  </div>
+  <button
+    class="btn align-self-start"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#staticBackdrop"
+    aria-controls="staticBackdrop"
+  >
+    <i class="bi bi-people-fill text-white"></i>
+  </button>
+</div>
+<div class="bg-dark p-2 rounded">
+<div class="text-white d-flex mt-5 bg-black rounded container" id="head">
+            <a href="#" class="text-decoration-none"
+              ><img
+                src="https://ilbenessereolistico.com/wp-content/uploads/2018/10/Viola-1200x675.jpeg"
+                alt=""
+                style="width: 200px; height: 200px"
+                class="m-4"
+                id="imgHead"
+            /></a>
+
+            <div class="m-4" id="headDetails">
+              <p>ALBUM</p>
+              <h2 class="fs-1">VIOLA (feat.Salmo)</h2>
+              <p>Fedez, Salmo</p>
+              <p>Ascolta il nuovo singolo di Fedez e Salmo!</p>
+              <button class="btn btn-success rounded-pill px-4 py-2">Play</button>
+              <button class="btn btn-outline-light rounded-pill px-4 py-2 ms-3">Salva</button>
+              <i class="bi bi-three-dots ms-3"></i>
+            </div>
+          </div>
+          <div class="container">
+            <h3 class="text-white d-block mt-5 mb-3">Buonasera</h3>
+            <div class="row" id="buonaseraRow"></div>
+            <h3 class="text-white mt-5 mb-3">Altro di ciò che ti piace</h3>
+            <div class="row" id="rowAltroCheTiPiace"></div>
+            <h3 class="text-white mt-5 mb-3">Consigliati</h3>
+            <div class="row" id="rowConsigliati"></div>
+            <h3 class="text-white mt-5 mb-3">Album più popolari</h3>
+            <div class="row" id="rowPiùPopolari"></div>
+            <h3 class="text-white mt-5 mb-3">Rap di Milano</h3>
+            <div class="row" id="rowDiMilano"></div>
+</div>
+  `;
   try {
     const resp = await fetch(URL + idINNOCENTE, { method: "GET" });
     const albumObj = await resp.json();
     document.getElementById("imgHead").src = albumObj.cover;
     const divHead = document.getElementById("headDetails");
     divHead.innerHTML = ` <p>ALBUM</p>
-    <a href="#" class="text-decoration-none"><h2 class="fs-1">${albumObj.title}</h2></a>
-    <a href="#" class="text-decoration-none"><p>${albumObj.contributors[0].name}</p></a>
+    <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><h2 class="fs-1">${albumObj.title}</h2></a>
+    <a href="./index.html?artistId=6855525" class="text-decoration-none"><p>${albumObj.contributors[0].name}</p></a>
     <p>Ascolta il nuovo album di <a href="#" class="text-decoration-none"> ${albumObj.contributors[0].name} </a></p>
     <button class="btn btn-success rounded-pill px-4 py-2">Play</button>
     <button class="btn btn-outline-light rounded-pill px-4 py-2 ms-3">Salva</button>
