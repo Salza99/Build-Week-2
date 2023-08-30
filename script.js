@@ -68,8 +68,8 @@ const loadHome = async () => {
     const divHead = document.getElementById("headDetails");
     divHead.innerHTML = ` <p>ALBUM</p>
     <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><h2 class="fs-1">${albumObj.title}</h2></a>
-    <a href="./index.html?artistId=6855525" class="text-decoration-none"><p>${albumObj.contributors[0].name}</p></a>
-    <p>Ascolta il nuovo album di <a href="#" class="text-decoration-none"> ${albumObj.contributors[0].name} </a></p>
+    <a href="./index.html?artistId=${albumObj.contributors[0].id}" class="text-decoration-none"><p>${albumObj.contributors[0].name}</p></a>
+    <p>Ascolta il nuovo album di <a href="./index.html?artistId=${albumObj.contributors[0].id}" class="text-decoration-none"> ${albumObj.contributors[0].name} </a></p>
     <button class="btn btn-success rounded-pill px-4 py-2">Play</button>
     <button class="btn btn-outline-light rounded-pill px-4 py-2 ms-3">Salva</button>
     <i class="bi bi-three-dots ms-3"></i>`;
@@ -100,85 +100,85 @@ const loadHome = async () => {
     const albumObj9 = await resp9.json();
     const buonaseraRow = document.getElementById("buonaseraRow");
     buonaseraRow.innerHTML = `
-<div class="col-4 text-white">
+<div class="col-6 col-lg-4 text-white">
 <div class="card mb-3 text-white">
   <div class="row g-0">
     <div class="col-md-4">
-    <a href="#" class="text-decoration-none"> <img src="${albumObj.cover}" class="img-fluid rounded-start" alt="..." /> </a>
+    <a href="./index.html?albumId=${idBohemian}" class="text-decoration-none"> <img src="${albumObj.cover}" class="img-fluid rounded-start" alt="..." /> </a>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-      <a href="#" class="text-decoration-none"> <h5 class="card-title">${albumObj.title}</h5> </a>
+      <a href="./index.html?albumId=${idBohemian}" class="text-decoration-none"> <h5 class="card-title">${albumObj.title}</h5> </a>
       </div>
     </div>
   </div>
 </div>
 </div>
-<div class="col-4 text-white">
+<div class="col-6 col-lg-4 text-white">
 <div class="card mb-3">
   <div class="row g-0">
     <div class="col-md-4">
-     <a href="#" class="text-decoration-none"> <img src="${albumObj1.cover}" class="img-fluid rounded-start" alt="..." /></a>
+    <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"> <img src="${albumObj1.cover}" class="img-fluid rounded-start" alt="..." /></a>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-       <a href="#" class="text-decoration-none"> <h5 class="card-title">${albumObj1.title}</h5></a>
+      <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"> <h5 class="card-title">${albumObj1.title}</h5></a>
       </div>
     </div>
   </div>
 </div>
 </div>
-<div class="col-4 text-white">
+<div class="col-6 col-lg-4 text-white">
 <div class="card mb-3">
   <div class="row g-0">
     <div class="col-md-4">
-      <a href="#" class="text-decoration-none"><img src="${albumObj2.cover}" class="img-fluid rounded-start" alt="..." /></a>
+      <a href="./index.html?albumId=${idTheEminemShow}" class="text-decoration-none"><img src="${albumObj2.cover}" class="img-fluid rounded-start" alt="..." /></a>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj2.title}</h5></a>
+        <a href="./index.html?albumId=${idTheEminemShow}" class="text-decoration-none"><h5 class="card-title">${albumObj2.title}</h5></a>
       </div>
     </div>
   </div>
 </div>
 </div>
-<div class="col-4 text-white">
+<div class="col-6 col-lg-4 text-white">
 <div class="card mb-3">
   <div class="row g-0">
     <div class="col-md-4">
-     <a href="#" class="text-decoration-none"> <img src="${albumObj3.cover}" class="img-fluid rounded-start" alt="..." /></a>
+     <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"> <img src="${albumObj3.cover}" class="img-fluid rounded-start" alt="..." /></a>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-       <a href="#" class="text-decoration-none"> <h5 class="card-title">${albumObj3.title}</h5></a>
+       <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"> <h5 class="card-title">${albumObj3.title}</h5></a>
       </div>
     </div>
   </div>
 </div>
 </div>
-<div class="col-4 text-white">
+<div class="col-6 col-lg-4 text-white">
 <div class="card mb-3">
   <div class="row g-0">
     <div class="col-md-4">
-     <a href="#" class="text-decoration-none"> <img src="${albumObj4.cover}" class="img-fluid rounded-start" alt="..." /></a>
+     <a href="./index.html?albumId=${idScorpion}" class="text-decoration-none"> <img src="${albumObj4.cover}" class="img-fluid rounded-start" alt="..." /></a>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-       <a href="#" class="text-decoration-none"> <h5 class="card-title">${albumObj4.title}</h5></a>
+       <a href="./index.html?albumId=${idScorpion}" class="text-decoration-none"> <h5 class="card-title">${albumObj4.title}</h5></a>
       </div>
     </div>
   </div>
 </div>
 </div>
-<div class="col-4 text-white">
+<div class="col-6 col-lg-4 text-white">
 <div class="card mb-3">
   <div class="row g-0">
     <div class="col-md-4">
-      <a href="#" class="text-decoration-none"><img src="${albumObj5.cover}" class="img-fluid rounded-start" alt="..." /></a>
+      <a href="./index.html?albumId=${idXXX}" class="text-decoration-none"><img src="${albumObj5.cover}" class="img-fluid rounded-start" alt="..." /></a>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-       <a href="#" class="text-decoration-none"> <h5 class="card-title">${albumObj5.title}</h5></a>
+       <a href="./index.html?albumId=${idXXX}" class="text-decoration-none"> <h5 class="card-title">${albumObj5.title}</h5></a>
       </div>
     </div>
   </div>
@@ -187,156 +187,156 @@ const loadHome = async () => {
 
     const rowAltroCheTiPiace = document.getElementById("rowAltroCheTiPiace");
     rowAltroCheTiPiace.innerHTML = `              
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-  <a href="#" class="text-decoration-none"><img src="${albumObj5.cover}" class="card-img-top" alt="..." /></a>
+  <a href="./index.html?albumId=${idXXX}" class="text-decoration-none"><img src="${albumObj5.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
-    <a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj5.title}</h5></a>
-    <a href="#" class="text-decoration-none"><p class="card-text">${albumObj5.contributors[0].name}</p></a>
+    <a href="./index.html?albumId=${idXXX}" class="text-decoration-none"><h5 class="card-title">${albumObj5.title}</h5></a>
+    <a href="./index.html?artistId=${albumObj5.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj5.contributors[0].name}</p></a>
   </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-  <a href="#" class="text-decoration-none"><img src="${albumObj3.cover}" class="card-img-top" alt="..." /></a>
+  <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"><img src="${albumObj3.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
-    <a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj3.title}</h5></a>
-    <a href="#" class="text-decoration-none"><p class="card-text">${albumObj3.contributors[0].name}</p></a>
+    <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"><h5 class="card-title">${albumObj3.title}</h5></a>
+    <a href="./index.html?artistId=${albumObj3.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj3.contributors[0].name}</p></a>
   </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-  <a href="#" class="text-decoration-none"><img src="${albumObj1.cover}" class="card-img-top" alt="..." /></a>
+  <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"><img src="${albumObj1.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
-    <a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj1.title}</h5></a>
-    <a href="#" class="text-decoration-none"><p class="card-text">${albumObj1.contributors[0].name}</p></a>
+    <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"><h5 class="card-title">${albumObj1.title}</h5></a>
+    <a href="./index.html?artistId=${albumObj1.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj1.contributors[0].name}</p></a>
   </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-  <a href="#" class="text-decoration-none"><img src="${albumObj4.cover}" class="card-img-top" alt="..." /></a>
+  <a href="./index.html?albumId=${idScorpion}" class="text-decoration-none"><img src="${albumObj4.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
-    <a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj4.title}</h5></a>
-    <a href="#" class="text-decoration-none"><p class="card-text">${albumObj4.contributors[0].name}</p></a>
+    <a href="./index.html?albumId=${idScorpion}" class="text-decoration-none"><h5 class="card-title">${albumObj4.title}</h5></a>
+    <a href="./index.html?artistId=${albumObj4.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj4.contributors[0].name}</p></a>
   </div>
 </div>
 </div>`;
 
     const rowConsigliati = document.getElementById("rowConsigliati");
     rowConsigliati.innerHTML = `              
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-  <a href="#" class="text-decoration-none"><img src="${albumObj.cover}" class="card-img-top" alt="..." /></a>
+  <a href="./index.html?albumId=${idBohemian}" class="text-decoration-none"><img src="${albumObj.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
-    <a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj.title}</h5></a>
-    <a href="#" class="text-decoration-none"><p class="card-text">${albumObj.contributors[0].name}</p></a>
+    <a href="./index.html?albumId=${idBohemian}" class="text-decoration-none"><h5 class="card-title">${albumObj.title}</h5></a>
+    <a href="./index.html?artistId=${albumObj.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj.contributors[0].name}</p></a>
   </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-  <a href="#" class="text-decoration-none"><img src="${albumObj2.cover}" class="card-img-top" alt="..." /></a>
+  <a href="./index.html?albumId=${idTheEminemShow}" class="text-decoration-none"><img src="${albumObj2.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
-    <a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj2.title}</h5></a>
-    <a href="#" class="text-decoration-none"><p class="card-text">${albumObj2.contributors[0].name}</p></a>
+    <a href="./index.html?albumId=${idTheEminemShow}" class="text-decoration-none"><h5 class="card-title">${albumObj2.title}</h5></a>
+    <a href="./index.html?artistId=${albumObj2.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj2.contributors[0].name}</p></a>
   </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-  <a href="#" class="text-decoration-none"><img src="${albumObj6.cover}" class="card-img-top" alt="..." /></a>
+  <a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"><img src="${albumObj6.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
-    <a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj6.title}</h5></a>
-    <a href="#" class="text-decoration-none"><p class="card-text">${albumObj6.contributors[0].name}</p></a>
+    <a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"><h5 class="card-title">${albumObj6.title}</h5></a>
+    <a href="./index.html?artistId=${albumObj6.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj6.contributors[0].name}</p></a>
   </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-  <a href="#" class="text-decoration-none"><img src="${albumObj9.cover}" class="card-img-top" alt="..." /></a>
+  <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><img src="${albumObj9.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
-    <a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj9.title}</h5></a>
-    <a href="#" class="text-decoration-none"><p class="card-text">${albumObj9.contributors[0].name}</p></a>
+    <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><h5 class="card-title">${albumObj9.title}</h5></a>
+    <a href="./index.html?artistId=${albumObj9.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj9.contributors[0].name}</p></a>
   </div>
 </div>
 </div>`;
 
     const rowPiùPopolari = document.getElementById("rowPiùPopolari");
     rowPiùPopolari.innerHTML = `              
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-<a href="#" class="text-decoration-none"><img src="${albumObj8.cover}" class="card-img-top" alt="..." /></a>
+<a href="./index.html?albumId=${idGemelli}" class="text-decoration-none"><img src="${albumObj8.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
-<a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj8.title}</h5></a>
-<a href="#" class="text-decoration-none"><p class="card-text">${albumObj8.contributors[0].name}</p></a>
+<a href="./index.html?albumId=${idGemelli}" class="text-decoration-none"><h5 class="card-title">${albumObj8.title}</h5></a>
+<a href="./index.html?artistId=${albumObj8.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj8.contributors[0].name}</p></a>
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-<a href="#" class="text-decoration-none"><img src="${albumObj3.cover}" class="card-img-top" alt="..." /></a>
+<a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"><img src="${albumObj3.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
-<a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj3.title}</h5></a>
-<a href="#" class="text-decoration-none"><p class="card-text">${albumObj3.contributors[0].name}</p></a>
+<a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"><h5 class="card-title">${albumObj3.title}</h5></a>
+<a href="./index.html?artistId=${albumObj3.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj3.contributors[0].name}</p></a>
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-<a href="#" class="text-decoration-none"><img src="${albumObj1.cover}" class="card-img-top" alt="..." /></a>
+<a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"><img src="${albumObj1.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
-<a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj1.title}</h5></a>
-<a href="#" class="text-decoration-none"><p class="card-text">${albumObj1.contributors[0].name}</p></a>
+<a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"><h5 class="card-title">${albumObj1.title}</h5></a>
+<a href="./index.html?artistId=${albumObj1.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj1.contributors[0].name}</p></a>
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-<a href="#" class="text-decoration-none"><img src="${albumObj7.cover}" class="card-img-top" alt="..." /></a>
+<a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"><img src="${albumObj7.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
-<a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj7.title}</h5></a>
-<a href="#" class="text-decoration-none"><p class="card-text">${albumObj7.contributors[0].name}</p></a>
+<a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"><h5 class="card-title">${albumObj7.title}</h5></a>
+<a href="./index.html?artistId=${albumObj7.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj7.contributors[0].name}</p></a>
 </div>
 </div>
 </div>`;
 
     const rowDiMilano = document.getElementById("rowDiMilano");
     rowDiMilano.innerHTML = `              
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-<a href="#" class="text-decoration-none"><img src="${albumObj6.cover}" class="card-img-top" alt="..." /></a>
+<a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"><img src="${albumObj6.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
-<a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj6.title}</h5></a>
-<a href="#" class="text-decoration-none"><p class="card-text">${albumObj6.contributors[0].name}</p></a>
+<a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"><h5 class="card-title">${albumObj6.title}</h5></a>
+<a href="./index.html?artistId=${albumObj6.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj6.contributors[0].name}</p></a>
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-<a href="#" class="text-decoration-none"><img src="${albumObj7.cover}" class="card-img-top" alt="..." /></a>
+<a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"><img src="${albumObj7.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
-<a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj7.title}</h5></a>
-<a href="#" class="text-decoration-none"><p class="card-text">${albumObj7.contributors[0].name}</p></a>
+<a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"><h5 class="card-title">${albumObj7.title}</h5></a>
+<a href="./index.html?artistId=${albumObj7.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj7.contributors[0].name}</p></a>
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-<a href="#" class="text-decoration-none"><img src="${albumObj9.cover}" class="card-img-top" alt="..." /></a>
+<a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><img src="${albumObj9.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
-<a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj9.title}</h5></a>
-<a href="#" class="text-decoration-none"><p class="card-text">${albumObj9.contributors[0].name}</p></a>
+<a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><h5 class="card-title">${albumObj9.title}</h5></a>
+<a href="./index.html?artistId=${albumObj9.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj9.contributors[0].name}</p></a>
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-12 col-lg-3 mb-4 mb-lg-1">
 <div class="card">
-<a href="#" class="text-decoration-none"><img src="${albumObj8.cover}" class="card-img-top" alt="..." /></a>
+<a href="./index.html?albumId=${idGemelli}" class="text-decoration-none"><img src="${albumObj8.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
-<a href="#" class="text-decoration-none"><h5 class="card-title">${albumObj8.title}</h5></a>
-<a href="#" class="text-decoration-none"><p class="card-text">${albumObj8.contributors[0].name}</p></a>
+<a href="./index.html?albumId=${idGemelli}" class="text-decoration-none"><h5 class="card-title">${albumObj8.title}</h5></a>
+<a href="./index.html?artistId=${albumObj8.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj8.contributors[0].name}</p></a>
 </div>
 </div>
 </div>`;

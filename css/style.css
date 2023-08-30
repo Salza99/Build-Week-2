@@ -33,4 +33,13 @@
 
 a {
   color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  overflow: hidden;
 }/*# sourceMappingURL=style.css.map */

@@ -1,4 +1,4 @@
-const loadPageAlbum = async (id) => {
+const loadPageAlbum = async id => {
   const URL = "https://striveschool-api.herokuapp.com/api/deezer/album/";
   let albumObj = await fetch(URL + id);
   let album = await albumObj.json();
@@ -30,7 +30,7 @@ const loadPageAlbum = async (id) => {
     <div class="col-9 d-flex flex-column justify-content-end">
       <p>Album</p>
       <h2 id="title">${album.title}</h2>
-      <p id="artist">${album.artist.name} · ${album.release_date} · ${album.nb_tracks} brani · ${durataTotaleAlbum}</p>
+      <p id="artist"><a href="./index.html?artistId=${album.artist.id}">${album.artist.name}</a> · ${album.release_date} · ${album.nb_tracks} brani · ${durataTotaleAlbum}</p>
     </div>
   </div>
   <div class="d-flex mt-3 mb-4">
@@ -72,7 +72,7 @@ const loadPageAlbum = async (id) => {
     <div class="col-1 d-flex flex-column justify-content-center">${i + 1}</div>
   <div class="col-6">
     <h6>${tracce[i].title}</h6>
-    <p>${tracce[i].artist.name}</p>
+    <a href="./index.html?artistId=${album.artist.id}"> <p>${tracce[i].artist.name}</p></a>
   </div>
 
 
