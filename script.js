@@ -13,7 +13,7 @@ const loadHome = async () => {
   const idINNOCENTE = "446034935";
   const mainContent = document.getElementById("js-main-content");
   mainContent.innerHTML = `
-  <div class="d-flex justify-content-between container sticky-top end-0 start-0">
+  <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0">
   <div>
     <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
     <i class="bi bi-arrow-right-circle-fill text-white"></i>
@@ -21,15 +21,17 @@ const loadHome = async () => {
   <button
     class="btn align-self-start"
     type="button"
-    data-bs-toggle="offcanvas"
     data-bs-target="#staticBackdrop"
     aria-controls="staticBackdrop"
+    onclick="aggiungiListaAmici()"
+    id="amici"
   >
-    <i class="bi bi-people-fill text-white"></i>
+    <i class="bi bi-people-fill text-white" ></i>
   </button>
 </div>
 <div class="bg-dark p-2 rounded">
-<div class="text-white d-flex mt-5 bg-black rounded container" id="head">
+
+<div class="text-white d-md-flex mt-5 bg-black rounded container d-none" id="head">
             <a href="#" class="text-decoration-none"
               ><img
                 src="https://ilbenessereolistico.com/wp-content/uploads/2018/10/Viola-1200x675.jpeg"
@@ -49,6 +51,7 @@ const loadHome = async () => {
               <i class="bi bi-three-dots ms-3"></i>
             </div>
           </div>
+
           <div class="container">
             <h3 class="text-white d-block mt-5 mb-3">Buonasera</h3>
             <div class="row" id="buonaseraRow"></div>
@@ -344,4 +347,14 @@ const loadHome = async () => {
   } catch (error) {
     console.log(error);
   }
+};
+
+const aggiungiListaAmici = () => {
+  const listaAmici = document.getElementById("listaAmici");
+  listaAmici.classList.remove("d-none");
+};
+
+const rimuoviListaAmici = () => {
+  const listaAmici = document.getElementById("listaAmici");
+  listaAmici.classList.add("d-none");
 };

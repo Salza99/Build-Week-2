@@ -16,7 +16,7 @@
   </head>
   <body class="bg-black">
     <main class="d-flex justify-content-start">
-      <div class="bg-black vh-100 w-25 m-2">
+      <div class="bg-black vh-100 w-25 m-2 d-none d-lg-inline-block">
         <div class="bg-dark p-2 m-2 rounded">
           <a class="text-decoration-none" href="./index.html"
             ><p class="text-white">
@@ -60,7 +60,31 @@
         data-bs-theme="dark"
         id="js-main-content"
       ></div>
+      <div class="bg-black vh-100 w-25 m-2 d-none text-white" id="listaAmici">
+        <div class="bg-dark p-2 m-2 rounded">
+          <div class="d-flex justify-content-between mb-5">
+            <h4 class="d-lg-inline-block">Attività amici</h4>
+            <div>
+              <i class="bi bi-person-plus-fill me-2"></i>
+              <i class="bi bi-x-lg" onclick="rimuoviListaAmici()"></i>
+            </div>
+          </div>
+          <div class="d-flex">
+            <img
+              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+              alt=""
+              class="rounded-circle imgProfile me-2"
+            />
+
+            <div>
+              <h6 class="mb-0">Flavio De Angelis</h6>
+              <p>mentalitè <i class="bi bi-dot"></i> baby gang</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+
     <div class="row fixed-bottom justify-content-between align-items-center text-white px-2 overlay-dark">
       <div id="js-player" class="d-flex align-items-center justify-content-start col-4"></div>
       <div class="d-flex flex-column align-items-center col-4 text-start">
