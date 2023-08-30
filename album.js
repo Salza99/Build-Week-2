@@ -1,9 +1,6 @@
-const URL = "https://striveschool-api.herokuapp.com/api/deezer/album/75621062";
-
-const loadPageAlbum = async () => {
-  let search = new URLSearchParams(window.location.search);
-  let id = search.get("id");
-  let albumObj = await fetch(URL);
+const loadPageAlbum = async (id) => {
+  const URL = "https://striveschool-api.herokuapp.com/api/deezer/album/";
+  let albumObj = await fetch(URL + id);
   let album = await albumObj.json();
   let durata = album.duration;
   let secondi = durata % 60;
