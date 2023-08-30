@@ -84,4 +84,3 @@ const loadPageAlbum = async () => {
 </div></div>`;
   }
 };
-loadPageAlbum();

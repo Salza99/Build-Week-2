@@ -84,4 +84,3 @@ const caricaArtista = () => {
     })
     .catch((err) => console.log(err));
 };
-caricaArtista();
