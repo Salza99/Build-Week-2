@@ -42,4 +42,9 @@ a:hover {
 
 body {
   overflow: hidden;
+}
+
+.img-search {
+  border-radius: 12px;
+  transform: rotate(25deg);
 }/*# sourceMappingURL=style.css.map */
