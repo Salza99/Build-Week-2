@@ -13,11 +13,15 @@ const loadHome = async () => {
   const idINNOCENTE = "446034935";
   const mainContent = document.getElementById("js-main-content");
   mainContent.innerHTML = `
-  <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0">
+  <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0 toolbar">
   <div>
     <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
     <i class="bi bi-arrow-right-circle-fill text-white"></i>
   </div>
+
+
+
+  <div>
   <button
     class="btn align-self-start"
     type="button"
@@ -28,10 +32,34 @@ const loadHome = async () => {
   >
     <i class="bi bi-people-fill text-white" ></i>
   </button>
+
+  <div class="dropdown d-inline-block">
+  <button class="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+  <img
+  src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+  alt=""
+  class="rounded-circle imgProfileHome"
+/>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark">
+    <li><a class="dropdown-item text-decoration-none" href="#">Account</a></li>
+    <li><a class="dropdown-item text-decoration-none" href="#">Profilo</a></li>
+    <li><a class="dropdown-item text-decoration-none" href="#">Sessione privata</a></li>
+    <li><a class="dropdown-item text-decoration-none" href="#">Impostazioni</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item text-decoration-none" href="#">Esci</a></li>
+  </ul>
+</div>
+
+
+
+</div>
 </div>
 <div class="bg-dark p-2 rounded">
 
 <div class="text-white d-md-flex mt-5 bg-black rounded container d-none" id="head">
+       
+      
             <a href="#" class="text-decoration-none"
               ><img
                 src="https://ilbenessereolistico.com/wp-content/uploads/2018/10/Viola-1200x675.jpeg"
@@ -49,9 +77,11 @@ const loadHome = async () => {
               <button class="btn btn-success rounded-pill px-4 py-2">Play</button>
               <button class="btn btn-outline-light rounded-pill px-4 py-2 ms-3">Salva</button>
               <i class="bi bi-three-dots ms-3"></i>
-            </div>
-          </div>
+</div>
 
+            <button class="btn btn-outline-light rounded-pill px-2 py-1 ms-3 buttonNascondi" onclick="nascondiHead()">Nascondi annunci</button>
+                  
+</div>
           <div class="container">
             <h3 class="text-white d-block mt-5 mb-3">Buonasera</h3>
             <div class="row" id="buonaseraRow"></div>
@@ -76,7 +106,8 @@ const loadHome = async () => {
     <p>Ascolta il nuovo album di <a href="./index.html?artistId=${albumObj.contributors[0].id}" class="text-decoration-none"> ${albumObj.contributors[0].name} </a></p>
     <button class="btn btn-success rounded-pill px-4 py-2">Play</button>
     <button class="btn btn-outline-light rounded-pill px-4 py-2 ms-3">Salva</button>
-    <i class="bi bi-three-dots ms-3"></i>`;
+    <i class="bi bi-three-dots ms-3"></i>
+    `;
   } catch (error) {
     console.log(error);
   }
@@ -105,7 +136,7 @@ const loadHome = async () => {
     const buonaseraRow = document.getElementById("buonaseraRow");
     buonaseraRow.innerHTML = `
 <div class="col-6 col-lg-4 text-white">
-<div class="card mb-3 text-white">
+<div class="card mb-3 text-white cardH">
   <div class="row g-0">
     <div class="col-md-4">
     <a href="./index.html?albumId=${idBohemian}" class="text-decoration-none"> <img src="${albumObj.cover}" class="img-fluid rounded-start" alt="..." /> </a>
@@ -119,7 +150,7 @@ const loadHome = async () => {
 </div>
 </div>
 <div class="col-6 col-lg-4 text-white">
-<div class="card mb-3">
+<div class="card mb-3 cardH">
   <div class="row g-0">
     <div class="col-md-4">
     <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"> <img src="${albumObj1.cover}" class="img-fluid rounded-start" alt="..." /></a>
@@ -133,7 +164,7 @@ const loadHome = async () => {
 </div>
 </div>
 <div class="col-6 col-lg-4 text-white">
-<div class="card mb-3">
+<div class="card mb-3 cardH">
   <div class="row g-0">
     <div class="col-md-4">
       <a href="./index.html?albumId=${idTheEminemShow}" class="text-decoration-none"><img src="${albumObj2.cover}" class="img-fluid rounded-start" alt="..." /></a>
@@ -147,7 +178,7 @@ const loadHome = async () => {
 </div>
 </div>
 <div class="col-6 col-lg-4 text-white">
-<div class="card mb-3">
+<div class="card mb-3 cardH">
   <div class="row g-0">
     <div class="col-md-4">
      <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"> <img src="${albumObj3.cover}" class="img-fluid rounded-start" alt="..." /></a>
@@ -161,7 +192,7 @@ const loadHome = async () => {
 </div>
 </div>
 <div class="col-6 col-lg-4 text-white">
-<div class="card mb-3">
+<div class="card mb-3 cardH">
   <div class="row g-0">
     <div class="col-md-4">
      <a href="./index.html?albumId=${idScorpion}" class="text-decoration-none"> <img src="${albumObj4.cover}" class="img-fluid rounded-start" alt="..." /></a>
@@ -175,7 +206,7 @@ const loadHome = async () => {
 </div>
 </div>
 <div class="col-6 col-lg-4 text-white">
-<div class="card mb-3">
+<div class="card mb-3 cardH">
   <div class="row g-0">
     <div class="col-md-4">
       <a href="./index.html?albumId=${idXXX}" class="text-decoration-none"><img src="${albumObj5.cover}" class="img-fluid rounded-start" alt="..." /></a>
@@ -192,38 +223,38 @@ const loadHome = async () => {
     const rowAltroCheTiPiace = document.getElementById("rowAltroCheTiPiace");
     rowAltroCheTiPiace.innerHTML = `              
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
   <a href="./index.html?albumId=${idXXX}" class="text-decoration-none"><img src="${albumObj5.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
     <a href="./index.html?albumId=${idXXX}" class="text-decoration-none"><h5 class="card-title">${albumObj5.title}</h5></a>
-    <a href="./index.html?artistId=${albumObj5.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj5.contributors[0].name}</p></a>
+    <a href="./index.html?artistId=${albumObj5.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj5.contributors[0].name}</p></a>
   </div>
 </div>
 </div>
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
   <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"><img src="${albumObj3.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
     <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"><h5 class="card-title">${albumObj3.title}</h5></a>
-    <a href="./index.html?artistId=${albumObj3.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj3.contributors[0].name}</p></a>
+    <a href="./index.html?artistId=${albumObj3.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj3.contributors[0].name}</p></a>
   </div>
 </div>
 </div>
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
   <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"><img src="${albumObj1.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
     <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"><h5 class="card-title">${albumObj1.title}</h5></a>
-    <a href="./index.html?artistId=${albumObj1.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj1.contributors[0].name}</p></a>
+    <a href="./index.html?artistId=${albumObj1.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj1.contributors[0].name}</p></a>
   </div>
 </div>
 </div>
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
   <a href="./index.html?albumId=${idScorpion}" class="text-decoration-none"><img src="${albumObj4.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
     <a href="./index.html?albumId=${idScorpion}" class="text-decoration-none"><h5 class="card-title">${albumObj4.title}</h5></a>
-    <a href="./index.html?artistId=${albumObj4.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj4.contributors[0].name}</p></a>
+    <a href="./index.html?artistId=${albumObj4.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj4.contributors[0].name}</p></a>
   </div>
 </div>
 </div>`;
@@ -231,38 +262,38 @@ const loadHome = async () => {
     const rowConsigliati = document.getElementById("rowConsigliati");
     rowConsigliati.innerHTML = `              
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
   <a href="./index.html?albumId=${idBohemian}" class="text-decoration-none"><img src="${albumObj.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
     <a href="./index.html?albumId=${idBohemian}" class="text-decoration-none"><h5 class="card-title">${albumObj.title}</h5></a>
-    <a href="./index.html?artistId=${albumObj.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj.contributors[0].name}</p></a>
+    <a href="./index.html?artistId=${albumObj.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj.contributors[0].name}</p></a>
   </div>
 </div>
 </div>
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
   <a href="./index.html?albumId=${idTheEminemShow}" class="text-decoration-none"><img src="${albumObj2.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
     <a href="./index.html?albumId=${idTheEminemShow}" class="text-decoration-none"><h5 class="card-title">${albumObj2.title}</h5></a>
-    <a href="./index.html?artistId=${albumObj2.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj2.contributors[0].name}</p></a>
+    <a href="./index.html?artistId=${albumObj2.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj2.contributors[0].name}</p></a>
   </div>
 </div>
 </div>
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
   <a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"><img src="${albumObj6.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
     <a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"><h5 class="card-title">${albumObj6.title}</h5></a>
-    <a href="./index.html?artistId=${albumObj6.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj6.contributors[0].name}</p></a>
+    <a href="./index.html?artistId=${albumObj6.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj6.contributors[0].name}</p></a>
   </div>
 </div>
 </div>
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
   <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><img src="${albumObj9.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
     <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><h5 class="card-title">${albumObj9.title}</h5></a>
-    <a href="./index.html?artistId=${albumObj9.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj9.contributors[0].name}</p></a>
+    <a href="./index.html?artistId=${albumObj9.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj9.contributors[0].name}</p></a>
   </div>
 </div>
 </div>`;
@@ -270,38 +301,38 @@ const loadHome = async () => {
     const rowPiùPopolari = document.getElementById("rowPiùPopolari");
     rowPiùPopolari.innerHTML = `              
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
 <a href="./index.html?albumId=${idGemelli}" class="text-decoration-none"><img src="${albumObj8.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
 <a href="./index.html?albumId=${idGemelli}" class="text-decoration-none"><h5 class="card-title">${albumObj8.title}</h5></a>
-<a href="./index.html?artistId=${albumObj8.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj8.contributors[0].name}</p></a>
+<a href="./index.html?artistId=${albumObj8.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj8.contributors[0].name}</p></a>
 </div>
 </div>
 </div>
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
 <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"><img src="${albumObj3.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
 <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"><h5 class="card-title">${albumObj3.title}</h5></a>
-<a href="./index.html?artistId=${albumObj3.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj3.contributors[0].name}</p></a>
+<a href="./index.html?artistId=${albumObj3.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj3.contributors[0].name}</p></a>
 </div>
 </div>
 </div>
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
 <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"><img src="${albumObj1.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
 <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"><h5 class="card-title">${albumObj1.title}</h5></a>
-<a href="./index.html?artistId=${albumObj1.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj1.contributors[0].name}</p></a>
+<a href="./index.html?artistId=${albumObj1.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj1.contributors[0].name}</p></a>
 </div>
 </div>
 </div>
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
 <a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"><img src="${albumObj7.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
 <a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"><h5 class="card-title">${albumObj7.title}</h5></a>
-<a href="./index.html?artistId=${albumObj7.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj7.contributors[0].name}</p></a>
+<a href="./index.html?artistId=${albumObj7.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj7.contributors[0].name}</p></a>
 </div>
 </div>
 </div>`;
@@ -309,41 +340,42 @@ const loadHome = async () => {
     const rowDiMilano = document.getElementById("rowDiMilano");
     rowDiMilano.innerHTML = `              
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
 <a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"><img src="${albumObj6.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
 <a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"><h5 class="card-title">${albumObj6.title}</h5></a>
-<a href="./index.html?artistId=${albumObj6.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj6.contributors[0].name}</p></a>
+<a href="./index.html?artistId=${albumObj6.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj6.contributors[0].name}</p></a>
 </div>
 </div>
 </div>
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
 <a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"><img src="${albumObj7.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
 <a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"><h5 class="card-title">${albumObj7.title}</h5></a>
-<a href="./index.html?artistId=${albumObj7.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj7.contributors[0].name}</p></a>
+<a href="./index.html?artistId=${albumObj7.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj7.contributors[0].name}</p></a>
 </div>
 </div>
 </div>
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
 <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><img src="${albumObj9.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
 <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><h5 class="card-title">${albumObj9.title}</h5></a>
-<a href="./index.html?artistId=${albumObj9.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj9.contributors[0].name}</p></a>
+<a href="./index.html?artistId=${albumObj9.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj9.contributors[0].name}</p></a>
 </div>
 </div>
 </div>
 <div class="col-12 col-lg-3 mb-4 mb-lg-1">
-<div class="card">
+<div class="card mainCard">
 <a href="./index.html?albumId=${idGemelli}" class="text-decoration-none"><img src="${albumObj8.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
 <a href="./index.html?albumId=${idGemelli}" class="text-decoration-none"><h5 class="card-title">${albumObj8.title}</h5></a>
-<a href="./index.html?artistId=${albumObj8.contributors[0].id}" class="text-decoration-none"><p class="card-text">${albumObj8.contributors[0].name}</p></a>
+<a href="./index.html?artistId=${albumObj8.contributors[0].id}" class="text-decoration-none"><p class="card-text artistMainCard">${albumObj8.contributors[0].name}</p></a>
 </div>
 </div>
-</div>`;
+</div>
+<br/>`;
   } catch (error) {
     console.log(error);
   }
@@ -357,4 +389,9 @@ const aggiungiListaAmici = () => {
 const rimuoviListaAmici = () => {
   const listaAmici = document.getElementById("listaAmici");
   listaAmici.classList.add("d-none");
+};
+
+const nascondiHead = () => {
+  const head = document.getElementById("head");
+  head.remove();
 };
