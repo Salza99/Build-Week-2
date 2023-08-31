@@ -14,27 +14,445 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body class="bg-black">
-    <div class="bg-dark container pt-2">
+  <body class="d-flex justify-content-start bg-black">
+    <div class="bg-dark d-none d-sm-inline-block vh-100 w-25 m-2">
+      <div class="bg-dark p-2 m-2 rounded">
+        <a class="text-decoration-none" class="text-decoration-none" href="./index.html"
+          ><p class="text-white">
+            <i class="bi bi-house-door-fill me-2"></i><span class="d-none d-lg-inline-block">Home</span>
+          </p></a
+        >
+        <a class="text-decoration-none" href="search.html"
+          ><p class="text-white">
+            <i class="bi bi-search me-2"></i><span class="d-none d-lg-inline-block">Cerca</span>
+          </p></a
+        >
+        <a class="text-decoration-none" href="#"
+          ><p class="text-white">
+            <i class="bi bi-book me-2"></i><span class="d-none d-lg-inline-block">La tua libreria</span>
+          </p></a
+        >
+      </div>
+      <div class="bg-dark p-2 m-2 rounded">
+        <a class="text-decoration-none" href="#"
+          ><p class="text-white">
+            <i class="bi bi-plus-square me-2"></i><span class="d-none d-lg-inline-block">Crea playlist</span>
+          </p></a
+        >
+        <a class="text-decoration-none" href="#"
+          ><p class="text-white">
+            <i class="bi bi-heart-fill me-2"></i><span class="d-none d-lg-inline-block">Brani che ti piacciono</span>
+          </p></a
+        >
+        <a class="text-decoration-none" href="#"
+          ><p class="text-white">
+            <i class="bi bi-bookmark me-2"></i><span class="d-none d-lg-inline-block">I tuoi episodi</span>
+          </p></a
+        >
+      </div>
+
+      <div id="favourite"></div>
+    </div>
+    <div class="bg-dark container pt-2 overflow-auto vh-100">
       <h2 class="text-white">Cerca</h2>
-      <div class="d-flex">
+      <div class="d-flex mb-4 justify-content-center justify-content-sm-start">
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" />
-          <button id="searchButton" class="btn btn-outline-success" type="submit">Cerca</button>
+          <button id="searchButton" class="btn btn-outline-secondary" type="submit">Cerca</button>
         </form>
       </div>
-      <h1 class="text-white">Sfoglia</h1>
+      <h2 class="text-white mb-4">Sfoglia</h2>
 
-      <div id="searchResult" class="row">
-        <div class="col-6 col-md-4 col-lg-3 col-xl-2 bg-warning">
-          <div class="row">
-            <div class="col-6">
-              <h5 class="text-white">Le tue scoperte</h5>
+      <div id="searchResult" class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-xxl-5 g-4">
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-primary rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Le tue scoperte</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-1.jpeg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
             </div>
-            <div class="col-6">
-              <img class="img-fluid img-search" src="./assets/imgs/search/image-1.jpeg" alt="" />
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-warning rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Podcast</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-2.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
             </div>
-          </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-danger rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Atmos</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-3.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-info rounded d-flex justify-content-between p-1 pt-3 pb-3 overflow-hidden h-100">
+              <h5 class="text-white fs-4 crop-text-2">Pop</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-4.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-primary rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Latina</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-5.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-warning rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Scelte per te</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-6.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-danger rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Rock & Roll</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-7.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-info rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Beast mode</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-8.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-primary rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">R&B</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-9.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-warning rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Classifiche</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-10.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-danger rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Car</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-11.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-info rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">2010 hits</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-12.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-primary rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Summer hits</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-13.jpeg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-warning rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Top songs</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-14.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-danger rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Unlocking Us</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-15.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-info rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Soul</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-16.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-primary rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Stress relief</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-17.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-warning rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Sleep</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-18.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-danger rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">The island</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-19.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-info rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Changes</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-20.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-primary rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Karaoke</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-21.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-warning rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Indigo</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-22.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-danger rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Deep focus</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-23.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-info rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Guitar</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-24.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-primary rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Out now</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-25.jpeg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-warning rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">New music</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-26.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-danger rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Party hits</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-27.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-info rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Afro hits</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-28.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-primary rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">Classical Music</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-29.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="#">
+            <div class="bg-warning rounded d-flex p-1 pt-3 pb-3 overflow-hidden justify-content-between h-100">
+              <h5 class="text-white fs-4 crop-text-2">LOL</h5>
+              <img
+                style="width: 4rem"
+                src="./assets/imgs/search/image-30.jpg"
+                alt=""
+                class="img-fluid offset-2 offset-sm-4 offset-md-3 offset-lg-3 img-search shadow"
+              />
+            </div>
+          </a>
         </div>
       </div>
     </div>
