@@ -68,7 +68,7 @@ const caricaArtista = (id) => {
 
             albumSection.innerHTML += `
         <div class="row align-items-center justify-content-between mb-2">
-            <div class="d-flex col-8 align-items-center justify-content-start" onclick="loadMusicOnStorage('${artistData.data[i].title}', '${artistData.data[i].album.cover}' ,'${artistObj.name}'); loadMusic();">
+            <div class="d-flex col-8 align-items-center justify-content-start" onclick="loadMusicOnStorage('${artistData.data[i].title}', '${artistData.data[i].album.cover}' ,'${artistObj.name}', '${artistData.data[i].preview}'); loadMusic();">
               <div class="me-2">${i}</div>
               <div class="me-2"><img src="${artistData.data[i].album.cover}" alt="" height="50px" /></div>
               <div>${artistData.data[i].title}</div>
@@ -84,16 +84,19 @@ const caricaArtista = (id) => {
     .catch((err) => console.log(err));
 };
 
-const loadMusicOnStorage = (title, albumImg, artist) => {
+const loadMusicOnStorage = (title, albumImg, artist, mp3) => {
   const obj = {
     title: title,
     albumImg: albumImg,
     artist: artist,
+    mp3: mp3,
   };
+  console.log(obj.mp3);
   localStorage.setItem("song", JSON.stringify(obj));
 };
 const loadMusic = () => {
   const player = document.getElementById("js-player");
+  const audio = document.getElementById("player");
   const music = JSON.parse(localStorage.getItem("song"));
   if (music) {
     player.innerHTML = `
@@ -103,5 +106,6 @@ const loadMusic = () => {
       <div>${music.artist}</div>
     </div>
     `;
+    audio.setAttribute("src", `${music.mp3}`);
   }
 };
