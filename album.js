@@ -57,27 +57,30 @@ const loadPageAlbum = async (id) => {
 
 
   <div class="d-flex flex-column flex-sm-row row-cols-sm-2 align-items-center">
-    <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2 mb-3"><img src='${album.cover}' class="w-75" pt-5" alt="" /></div>
+    <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2"><img src='${album.cover}' class="w-75" alt="" /></div>
     <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10 d-flex flex-column  justify-content-end align-self-center">
       <p class="d-none d-sm-inline-block">Album</p>
       <h5 class="display-2 fw-bold" id="title">${album.title}</h5>
       <p id="artist" class="align-middle "><a class="fw-bold" href="./index.html?artistId=${album.artist.id}"><img width="25px" class="img-fluid rounded-circle" src="${album.artist.picture}" alt="">${album.artist.name} ·</a> <span class="d-block d-sm-inline"> ${album.release_date} · ${album.nb_tracks} brani  </span><span class="text-muted d-none d-sm-inline-block"> · ${durataTotaleAlbum}</span></p>
     </div>
   </div>
-  <div class="d-flex mt-3 mb-4">
+  <div class="d-flex">
     <div class="me-3"><i class="bi bi-play-circle col-2"></i></div>
     <div class="me-3"><i class="bi bi-heart col-2"></i></div>
     <div class="me-3"><i class="bi bi-arrow-down-circle col-2"></i></div>
     <div class="me-3"><i class="bi bi-three-dots col-2"></i></div>
   </div>
-  <div class="row mb-4">
-    <div class="col-6 d-none d-sm-inline-block">
-      <h6># titolo</h6>
-    </div>
-    <div class="col-4 d-none d-sm-inline-block">RIPRODUZIONI</div>
-    <div class="col-2 d-flex justify-content-end d-none d-sm-inline-block"><i class="bi bi-clock"></i></div>
-    
-  </div><div id="listaTracce">
+  <div class="container-fluid mb-4">
+  <div class="row ">
+  <div class="col-6 d-none d-sm-inline-block">
+    <h6># titolo</h6>
+  </div>
+  <div class="col-5 d-none d-sm-inline-block ps-5">RIPRODUZIONI</div>
+  <div class="col-1 d-flex justify-content-end d-none d-sm-inline-block text-end"><i class="bi bi-clock"></i></div>
+  
+</div>
+  </div>
+  <div id="listaTracce">
   
     </div>
 

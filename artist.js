@@ -7,8 +7,8 @@ const caricaArtista = (id) => {
       loadMusic();
       const content = document.getElementById("js-main-content");
       content.innerHTML = `
-      <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0 toolbar">
-    <div>
+      <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0 toolbar pt-2">
+  <div class="pt-2">
       <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
       <i class="bi bi-arrow-right-circle-fill text-white"></i>
     </div>
@@ -49,6 +49,7 @@ const caricaArtista = (id) => {
 
 </div>
 </div>
+
       <div>
         <div class="card text-bg-dark mb-4">
           <img
