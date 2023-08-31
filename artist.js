@@ -1,26 +1,54 @@
-const caricaArtista = (id) => {
+const caricaArtista = id => {
   fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + id)
-    .then((response) => {
+    .then(response => {
       return response.json();
     })
-    .then((artistObj) => {
+    .then(artistObj => {
       loadMusic();
       const content = document.getElementById("js-main-content");
       content.innerHTML = `
-        <div class="d-flex justify-content-between z-1 sticky-top end-0 start-0 pt-2">
-        <div><i class="bi bi-arrow-left-circle-fill me-2"></i> <i class="bi bi-arrow-right-circle-fill"></i></div>
-  
-        <div class="dropdown">
-          <button class="btn btn-black" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-people-fill text-white"></i>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </div>
+      <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0 toolbar">
+      <div>
+        <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
+        <i class="bi bi-arrow-right-circle-fill text-white"></i>
       </div>
+    
+    
+    
+      <div>
+      <button
+        class="btn align-self-start"
+        type="button"
+        data-bs-target="#staticBackdrop"
+        aria-controls="staticBackdrop"
+        onclick="aggiungiListaAmici()"
+        id="amici"
+      >
+        <i class="bi bi-people-fill text-white" ></i>
+      </button>
+    
+      <div class="dropdown d-inline-block">
+      <button class="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <img
+      src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+      alt=""
+      class="rounded-circle imgProfileHome"
+    />
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark">
+        <li><a class="dropdown-item text-decoration-none" href="#">Account</a></li>
+        <li><a class="dropdown-item text-decoration-none" href="#">Profilo</a></li>
+        <li><a class="dropdown-item text-decoration-none" href="#">Sessione privata</a></li>
+        <li><a class="dropdown-item text-decoration-none" href="#">Impostazioni</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item text-decoration-none" href="#">Esci</a></li>
+      </ul>
+    </div>
+    
+    
+    
+    </div>
+    </div>
       <div>
         <div class="card text-bg-dark mb-4">
           <img
@@ -53,10 +81,10 @@ const caricaArtista = (id) => {
 
       const albumSection = document.getElementById("js-albums-section");
       fetch(artistObj.tracklist)
-        .then((response) => {
+        .then(response => {
           return response.json();
         })
-        .then((artistData) => {
+        .then(artistData => {
           for (let i = 0; i < artistData.data.length; i++) {
             const durata = artistData.data[i].duration;
             let secondi = durata % 60;
@@ -67,7 +95,7 @@ const caricaArtista = (id) => {
             const durataTracce = `${minuti} : ${secondi}`;
 
             albumSection.innerHTML += `
-        <div class="row align-items-center justify-content-between mb-2">
+        <div class="row align-items-center justify-content-between mb-2" id="selectedTrack" >
             <div class="d-flex col-8 align-items-center justify-content-start" onclick="loadMusicOnStorage('${artistData.data[i].title}', '${artistData.data[i].album.cover}' ,'${artistObj.name}'); loadMusic();">
               <div class="me-2">${i}</div>
               <div class="me-2"><img src="${artistData.data[i].album.cover}" alt="" height="50px" /></div>
@@ -79,9 +107,9 @@ const caricaArtista = (id) => {
                 `;
           }
         })
-        .catch((err) => console.log(err));
+        .catch(err => console.log(err));
     })
-    .catch((err) => console.log(err));
+    .catch(err => console.log(err));
 };
 
 const loadMusicOnStorage = (title, albumImg, artist) => {
