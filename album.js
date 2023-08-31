@@ -26,12 +26,12 @@ const loadPageAlbum = async (id) => {
       </ul>
     </div>
   </div>
-  <div class="row">
-    <div class="col-3 mb-3"><img src='${album.cover}' class="img-fluid pt-5" alt="" /></div>
-    <div class="col-9 d-flex flex-column justify-content-end">
-      <p>Album</p>
-      <h2 id="title">${album.title}</h2>
-      <p id="artist"><a href="./index.html?artistId=${album.artist.id}">${album.artist.name}</a> · ${album.release_date} · ${album.nb_tracks} brani · ${durataTotaleAlbum}</p>
+  <div class="d-flex flex-column flex-sm-row row-cols-sm-2 align-items-center">
+    <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2 mb-3"><img src='${album.cover}' class="w-75" pt-5" alt="" /></div>
+    <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10 d-flex flex-column  justify-content-end align-self-center">
+      <p class="d-none d-sm-inline-block">Album</p>
+      <h5 class="display-2 fw-bold" id="title">${album.title}</h5>
+      <p id="artist" class="align-middle "><a class="fw-bold" href="./index.html?artistId=${album.artist.id}"><img width="25px" class="img-fluid rounded-circle" src="${album.artist.picture}" alt="">${album.artist.name} ·</a> <span class="d-block d-sm-inline"> ${album.release_date} · ${album.nb_tracks} brani  </span><span class="text-muted d-none d-sm-inline-block"> · ${durataTotaleAlbum}</span></p>
     </div>
   </div>
   <div class="d-flex mt-3 mb-4">
@@ -41,11 +41,11 @@ const loadPageAlbum = async (id) => {
     <div class="me-3"><i class="bi bi-three-dots col-2"></i></div>
   </div>
   <div class="row mb-4">
-    <div class="col-6">
+    <div class="col-6 d-none d-sm-inline-block">
       <h6># titolo</h6>
     </div>
-    <div class="col-4">RIPRODUZIONI</div>
-    <div class="col-2 d-flex justify-content-end"><i class="bi bi-clock"></i></div>
+    <div class="col-4 d-none d-sm-inline-block">RIPRODUZIONI</div>
+    <div class="col-2 d-flex justify-content-end d-none d-sm-inline-block"><i class="bi bi-clock"></i></div>
     
   </div><div id="listaTracce">
   
@@ -69,16 +69,16 @@ const loadPageAlbum = async (id) => {
     // let arrRanks = JSON.stringify(ranks).split("");
     // let array = arrRanks.splice(0, 5, "0");
     // console.log(array);
-    tracksList.innerHTML += `<div  class="d-flex align-items-center ">
-    <div class="col-1 d-flex flex-column justify-content-center">${i + 1}</div>
-  <div class="col-6">
+    tracksList.innerHTML += `<div  class="d-flex align-items-center justify-content-between justify-content-sm-start">
+    <div class="col-1 d-flex flex-column justify-content-center fw-light">${i + 1}</div>
+  <div class="col-6 align-content-start">
     <h6>${tracce[i].title}</h6>
-    <a href="./index.html?artistId=${album.artist.id}"> <p>${tracce[i].artist.name}</p></a>
+    <a href="./index.html?artistId=${album.artist.id}"> <p class="text-muted">${tracce[i].artist.name}</p></a>
   </div>
 
 
-<div class="col-1">${tracce[i].rank}</div>
-<div class="col-4 d-flex justify-content-end">${durataTracce}</div>
+<div class="col-1 text-muted d-none d-sm-inline-block">${tracce[i].rank}</div>
+<div class="col-4 d-flex justify-content-end text-muted d-none d-sm-flex">${durataTracce}</div><i class="d-flex d-sm-none bi bi-three-dots-vertical"></i>
 </div></div>`;
   }
 };
