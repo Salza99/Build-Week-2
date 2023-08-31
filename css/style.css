@@ -77,8 +77,17 @@ body {
   background-color: rgb(60, 60, 60);
 }
 
+#selectedTrack:hover {
+  background-color: rgb(40, 40, 40);
+  border-radius: 5px;
+}
+
 .artistMainCard {
   color: rgb(146, 146, 146);
+}
+
+.artistMainCard:hover {
+  color: rgb(255, 255, 255);
 }
 
 .amici {
