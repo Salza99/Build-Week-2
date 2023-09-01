@@ -56,11 +56,13 @@ const loadPageAlbum = async (id) => {
 </div>
 
 
-  <div class="d-flex flex-column flex-sm-row row-cols-sm-2 align-items-center">
-    <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2"><img src='${album.cover}' class="w-75" alt="" /></div>
-    <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10 d-flex flex-column  justify-content-end align-self-center">
+  <div style="min-height: 350px;" class="d-flex flex-column justify-content-around justify-content-sm-start flex-sm-row row-cols-sm-2 align-items-center ">
+
+  <div class="d-sm-none col-6 text-center "><img src='${album.cover}' class="w-100 img-thumbnail" alt="" /></div>
+    <div class="d-none d-sm-inline-block col-sm-5 col-md-4 "><img src='${album.cover}' class="w-75 img-thumbnail" alt="" /></div>
+    <div class="col-sm-7 col-md-8  d-flex flex-column  justify-content-end align-self-center">
       <p class="d-none d-sm-inline-block">Album</p>
-      <h5 class="display-2 fw-bold" id="title">${album.title}</h5>
+      <h5 class="display-4 fw-bold" id="title">${album.title}</h5>
       <p id="artist" class="align-middle "><a class="fw-bold" href="./index.html?artistId=${album.artist.id}"><img width="25px" class="img-fluid rounded-circle" src="${album.artist.picture}" alt="">${album.artist.name} ·</a> <span class="d-block d-sm-inline"> ${album.release_date} · ${album.nb_tracks} brani  </span><span class="text-muted d-none d-sm-inline-block"> · ${durataTotaleAlbum}</span></p>
     </div>
   </div>
@@ -102,7 +104,9 @@ const loadPageAlbum = async (id) => {
     // let arrRanks = JSON.stringify(ranks).split("");
     // let array = arrRanks.splice(0, 5, "0");
     // console.log(array);
-    tracksList.innerHTML += `<div  class="d-flex align-items-center justify-content-between justify-content-sm-start">
+    tracksList.innerHTML += `<div  class="d-flex align-items-center justify-content-between justify-content-sm-start" onclick="loadMusicOnStorage('${
+      tracce[i].title
+    }', '${album.cover}' ,'${album.artist.name}', '${tracce[i].preview}'); loadMusic();">
     <div class="col-1 d-flex flex-column justify-content-center fw-light">${i + 1}</div>
   <div class="col-6 align-content-start">
     <h6>${tracce[i].title}</h6>
