@@ -94,9 +94,9 @@
     </main>
 
     <div
-      class="row justify-content-between align-items-center text-white overlay-dark w-100 sticky-lg-bottom fixPlayer"
+      class="row justify-content-around justify-content-md-between align-items-center text-white overlay-dark w-100 sticky-lg-bottom fixPlayer"
     >
-      <div id="js-player" class="d-flex align-items-center justify-content-start col-4"></div>
+      <div id="js-player" class="d-none d-sm-flex align-items-center justify-content-start col-4"></div>
 
       <div class="d-flex flex-column align-items-center col-4 text-start">
         <div class="d-flex gap-3 align-items-center">
@@ -122,8 +122,8 @@
           <i class="bi bi-volume-mute fs-2 d-none" id="mute"></i>
           <input type="range" class="w-100" min="0" max="100" id="custom-volume" />
         </div>
-        <i class="bi bi-view-list"></i>
-        <i class="bi bi-pc-display"></i>
+        <i class="bi bi-view-list d-none d-md-inline-block"></i>
+        <i class="bi bi-pc-display d-none d-md-inline-block"></i>
       </div>
       <div class="progressContainer">
         <span id="current-time"></span>
