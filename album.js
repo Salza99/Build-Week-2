@@ -104,13 +104,13 @@ const loadPageAlbum = async (id) => {
     // let arrRanks = JSON.stringify(ranks).split("");
     // let array = arrRanks.splice(0, 5, "0");
     // console.log(array);
-    tracksList.innerHTML += `<div id="selectedTrack" class="d-flex align-items-center justify-content-between justify-content-sm-start" onclick="loadMusicOnStorage('${
+    tracksList.innerHTML += `<div id="selectedTrack" class="d-flex align-items-center justify-content-between justify-content-sm-start mb-2" onclick="loadMusicOnStorage('${
       tracce[i].title
     }', '${album.cover}' ,'${album.artist.name}', '${tracce[i].preview}'); loadMusic();">
     <div class="col-1 d-flex flex-column justify-content-center fw-light">${i + 1}</div>
   <div class="col-6 align-content-start">
     <h6>${tracce[i].title}</h6>
-    <a href="./index.html?artistId=${album.artist.id}"> <p class="text-muted">${tracce[i].artist.name}</p></a>
+    <a href="./index.html?artistId=${album.artist.id}"> <p class="text-muted m-0">${tracce[i].artist.name}</p></a>
   </div>
 
 
