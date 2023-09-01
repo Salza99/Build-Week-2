@@ -1,54 +1,55 @@
-const caricaArtista = id => {
+const caricaArtista = (id) => {
   fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + id)
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .then(artistObj => {
+    .then((artistObj) => {
       loadMusic();
       const content = document.getElementById("js-main-content");
       content.innerHTML = `
-      <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0 toolbar">
-      <div>
-        <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
-        <i class="bi bi-arrow-right-circle-fill text-white"></i>
-      </div>
-    
-    
-    
-      <div>
-      <button
-        class="btn align-self-start"
-        type="button"
-        data-bs-target="#staticBackdrop"
-        aria-controls="staticBackdrop"
-        onclick="aggiungiListaAmici()"
-        id="amici"
-      >
-        <i class="bi bi-people-fill text-white" ></i>
-      </button>
-    
-      <div class="dropdown d-inline-block">
-      <button class="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <img
-      src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
-      alt=""
-      class="rounded-circle imgProfileHome"
-    />
-      </button>
-      <ul class="dropdown-menu dropdown-menu-dark">
-        <li><a class="dropdown-item text-decoration-none" href="#">Account</a></li>
-        <li><a class="dropdown-item text-decoration-none" href="#">Profilo</a></li>
-        <li><a class="dropdown-item text-decoration-none" href="#">Sessione privata</a></li>
-        <li><a class="dropdown-item text-decoration-none" href="#">Impostazioni</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item text-decoration-none" href="#">Esci</a></li>
-      </ul>
+      <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0 toolbar pt-2">
+  <div class="pt-2">
+      <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
+      <i class="bi bi-arrow-right-circle-fill text-white"></i>
     </div>
-    
-    
-    
-    </div>
-    </div>
+
+
+
+  <div>
+  <button
+    class="btn align-self-start"
+    type="button"
+    data-bs-target="#staticBackdrop"
+    aria-controls="staticBackdrop"
+    onclick="aggiungiListaAmici()"
+    id="amici"
+  >
+    <i class="bi bi-people-fill text-white" ></i>
+  </button>
+
+  <div class="dropdown d-inline-block">
+    <button class="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <img
+    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+    alt=""
+    class="rounded-circle imgProfileHome"
+  />
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark">
+      <li><a class="dropdown-item text-decoration-none" href="#">Account</a></li>
+      <li><a class="dropdown-item text-decoration-none" href="#">Profilo</a></li>
+      <li><a class="dropdown-item text-decoration-none" href="#">Sessione privata</a></li>
+      <li><a class="dropdown-item text-decoration-none" href="#">Impostazioni</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item text-decoration-none" href="#">Esci</a></li>
+    </ul>
+</div>
+
+
+
+</div>
+</div>
+
       <div>
         <div class="card text-bg-dark mb-4">
           <img
@@ -81,10 +82,10 @@ const caricaArtista = id => {
 
       const albumSection = document.getElementById("js-albums-section");
       fetch(artistObj.tracklist)
-        .then(response => {
+        .then((response) => {
           return response.json();
         })
-        .then(artistData => {
+        .then((artistData) => {
           for (let i = 0; i < artistData.data.length; i++) {
             const durata = artistData.data[i].duration;
             let secondi = durata % 60;
@@ -107,21 +108,24 @@ const caricaArtista = id => {
                 `;
           }
         })
-        .catch(err => console.log(err));
+        .catch((err) => console.log(err));
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
-const loadMusicOnStorage = (title, albumImg, artist) => {
+const loadMusicOnStorage = (title, albumImg, artist, mp3) => {
   const obj = {
     title: title,
     albumImg: albumImg,
     artist: artist,
+    mp3: mp3,
   };
+  console.log(obj.mp3);
   localStorage.setItem("song", JSON.stringify(obj));
 };
 const loadMusic = () => {
   const player = document.getElementById("js-player");
+  const audio = document.getElementById("player");
   const music = JSON.parse(localStorage.getItem("song"));
   if (music) {
     player.innerHTML = `
@@ -131,5 +135,6 @@ const loadMusic = () => {
       <div>${music.artist}</div>
     </div>
     `;
+    audio.setAttribute("src", `${music.mp3}`);
   }
 };

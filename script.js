@@ -15,9 +15,9 @@ const loadHome = async () => {
   mainContent.innerHTML = `
   <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0 toolbar pt-2">
   <div class="pt-2">
-    <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
-    <i class="bi bi-arrow-right-circle-fill text-white"></i>
-  </div>
+      <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
+      <i class="bi bi-arrow-right-circle-fill text-white"></i>
+    </div>
 
 
 
@@ -34,21 +34,21 @@ const loadHome = async () => {
   </button>
 
   <div class="dropdown d-inline-block">
-  <button class="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-  <img
-  src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
-  alt=""
-  class="rounded-circle imgProfileHome"
-/>
-  </button>
-  <ul class="dropdown-menu dropdown-menu-dark">
-    <li><a class="dropdown-item text-decoration-none" href="#">Account</a></li>
-    <li><a class="dropdown-item text-decoration-none" href="#">Profilo</a></li>
-    <li><a class="dropdown-item text-decoration-none" href="#">Sessione privata</a></li>
-    <li><a class="dropdown-item text-decoration-none" href="#">Impostazioni</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item text-decoration-none" href="#">Esci</a></li>
-  </ul>
+    <button class="btn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <img
+    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+    alt=""
+    class="rounded-circle imgProfileHome"
+  />
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark">
+      <li><a class="dropdown-item text-decoration-none" href="#">Account</a></li>
+      <li><a class="dropdown-item text-decoration-none" href="#">Profilo</a></li>
+      <li><a class="dropdown-item text-decoration-none" href="#">Sessione privata</a></li>
+      <li><a class="dropdown-item text-decoration-none" href="#">Impostazioni</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item text-decoration-none" href="#">Esci</a></li>
+    </ul>
 </div>
 
 
@@ -57,8 +57,9 @@ const loadHome = async () => {
 </div>
 <div class="bg-dark p-2 rounded">
 
-<div class="text-white d-md-flex mt-5 bg-black rounded container d-none" id="head">
+<div class="text-white d-md-flex mt-5 bg-black rounded container d-none justify-content-between" id="head">
        
+          <div class="d-flex">
             <a href="#" class="text-decoration-none"
               ><img
                 src="https://ilbenessereolistico.com/wp-content/uploads/2018/10/Viola-1200x675.jpeg"
@@ -76,9 +77,8 @@ const loadHome = async () => {
               <button class="btn btn-success rounded-pill px-4 py-2">Play</button>
               <button class="btn btn-outline-light rounded-pill px-4 py-2 ms-3">Salva</button>
               <i class="bi bi-three-dots ms-3"></i>
-        
-</div>
-
+            </div>
+          </div>
             <button class="btn btn-outline-light rounded-pill px-2 py-1 ms-3 buttonNascondi" onclick="nascondiHead()">Nascondi annunci</button>
                   
 </div>
