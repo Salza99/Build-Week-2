@@ -18,7 +18,7 @@ const search = async () => {
             
              
                <div class=" overlay-dark d-flex flex-column justify-content-end img-hover ">
-                  <div ><h5 onclick="loadMusicOnStorage('${searchResult.data[i].title}', '${searchResult.data[i].album.cover}' ,'${searchResult.data[i].artist.name}', '${searchResult.data[i].preview}'); loadMusic();" class="text-white text-truncate">${searchResult.data[i].title}</h5>
+                  <div ><h5 class="pointer" onclick="loadMusicOnStorage('${searchResult.data[i].title}', '${searchResult.data[i].album.cover}' ,'${searchResult.data[i].artist.name}', '${searchResult.data[i].preview}'); loadMusic();" class="text-white text-truncate">${searchResult.data[i].title}</h5>
                     <a href="./index.html?artistId=${searchResult.data[i].artist.id}"><p class="text-white m-0">${searchResult.data[i].artist.name}</p></a>
                   </div>
                 </div>
