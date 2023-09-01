@@ -96,7 +96,7 @@ const caricaArtista = (id) => {
 
             albumSection.innerHTML += `
         <div class="row align-items-center justify-content-between mb-2" id="selectedTrack" >
-            <div class="d-flex col-8 align-items-center justify-content-start" onclick="loadMusicOnStorage('${artistData.data[i].title}', '${artistData.data[i].album.cover}' ,'${artistObj.name}'); loadMusic();">
+            <div class="d-flex col-8 align-items-center justify-content-start" onclick="loadMusicOnStorage('${artistData.data[i].title}', '${artistData.data[i].album.cover}' ,'${artistObj.name}', '${artistData.data[i].preview}'); loadMusic();">
               <div class="me-2">${i}</div>
               <div class="me-2"><img src="${artistData.data[i].album.cover}" alt="" height="50px" /></div>
               <div>${artistData.data[i].title}</div>
