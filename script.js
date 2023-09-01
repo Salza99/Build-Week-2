@@ -84,15 +84,25 @@ const loadHome = async () => {
 </div>
           <div class="container">
             <h3 class="text-white d-block mt-5 mb-3">Buonasera</h3>
-            <div class="row" id="buonaseraRow"></div>
+            <div class="row" id="buonaseraRow"><div class="spinner-border text-success mx-auto" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div></div>
             <h3 class="text-white mt-5 mb-3">Altro di ciò che ti piace</h3>
-            <div class="row" id="rowAltroCheTiPiace"></div>
+            <div class="row" id="rowAltroCheTiPiace"><div class="spinner-border text-success mx-auto" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div></div>
             <h3 class="text-white mt-5 mb-3">Consigliati</h3>
-            <div class="row" id="rowConsigliati"></div>
+            <div class="row" id="rowConsigliati"><div class="spinner-border text-success mx-auto" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div></div>
             <h3 class="text-white mt-5 mb-3">Album più popolari</h3>
-            <div class="row" id="rowPiùPopolari"></div>
+            <div class="row" id="rowPiùPopolari"><div class="spinner-border text-success mx-auto" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div></div>
             <h3 class="text-white mt-5 mb-3">Rap di Milano</h3>
-            <div class="row" id="rowDiMilano"></div>
+            <div class="row" id="rowDiMilano"><div class="spinner-border text-success mx-auto" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div></div>
 </div>
   `;
   try {
@@ -143,7 +153,7 @@ const loadHome = async () => {
     </div>
     <div class="col-8">
       <div class="card-body">
-      <a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"> <h5 class="card-title">${albumObj6.title}</h5> </a>
+      <a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"> <h5 class="card-title text-truncate">${albumObj6.title}</h5> </a>
       </div>
     </div>
   </div>
@@ -157,7 +167,7 @@ const loadHome = async () => {
     </div>
     <div class="col-8">
       <div class="card-body">
-      <a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"> <h5 class="card-title">${albumObj7.title}</h5></a>
+      <a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"> <h5 class="card-title text-truncate">${albumObj7.title}</h5></a>
       </div>
     </div>
   </div>
@@ -171,7 +181,7 @@ const loadHome = async () => {
     </div>
     <div class="col-8">
       <div class="card-body">
-        <a href="./index.html?albumId=${idTheEminemShow}" class="text-decoration-none"><h5 class="card-title">${albumObj2.title}</h5></a>
+        <a href="./index.html?albumId=${idTheEminemShow}" class="text-decoration-none"><h5 class="card-title text-truncate">${albumObj2.title}</h5></a>
       </div>
     </div>
   </div>
@@ -185,7 +195,7 @@ const loadHome = async () => {
     </div>
     <div class="col-8">
       <div class="card-body">
-       <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"> <h5 class="card-title">${albumObj3.title}</h5></a>
+       <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"> <h5 class="card-title text-truncate">${albumObj3.title}</h5></a>
       </div>
     </div>
   </div>
@@ -199,7 +209,7 @@ const loadHome = async () => {
     </div>
     <div class="col-8">
       <div class="card-body">
-       <a href="./index.html?albumId=${idScorpion}" class="text-decoration-none"> <h5 class="card-title">${albumObj4.title}</h5></a>
+       <a href="./index.html?albumId=${idScorpion}" class="text-decoration-none"> <h5 class="card-title text-truncate">${albumObj4.title}</h5></a>
       </div>
     </div>
   </div>
@@ -213,7 +223,7 @@ const loadHome = async () => {
     </div>
     <div class="col-8">
       <div class="card-body">
-       <a href="./index.html?albumId=${idXXX}" class="text-decoration-none"> <h5 class="card-title">${albumObj5.title}</h5></a>
+       <a href="./index.html?albumId=${idXXX}" class="text-decoration-none"> <h5 class="card-title text-truncate">${albumObj5.title}</h5></a>
       </div>
     </div>
   </div>
