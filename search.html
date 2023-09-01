@@ -15,45 +15,88 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="d-flex justify-content-start bg-black">
-    <div class="bg-dark d-none d-sm-inline-block vh-100 w-25 m-2">
+    <div class="bg-black d-none d-sm-inline-block vh-100 w-25 m-2">
       <div class="bg-dark p-2 m-2 rounded">
         <a class="text-decoration-none" class="text-decoration-none" href="./index.html"
-          ><p class="text-white">
+          ><p class="buttonLeft">
             <i class="bi bi-house-door-fill me-2"></i><span class="d-none d-lg-inline-block">Home</span>
           </p></a
         >
         <a class="text-decoration-none" href="search.html"
-          ><p class="text-white">
+          ><p class="buttonLeft">
             <i class="bi bi-search me-2"></i><span class="d-none d-lg-inline-block">Cerca</span>
           </p></a
         >
         <a class="text-decoration-none" href="#"
-          ><p class="text-white">
+          ><p class="buttonLeft">
             <i class="bi bi-book me-2"></i><span class="d-none d-lg-inline-block">La tua libreria</span>
           </p></a
         >
       </div>
       <div class="bg-dark p-2 m-2 rounded">
         <a class="text-decoration-none" href="#"
-          ><p class="text-white">
-            <i class="bi bi-plus-square me-2"></i><span class="d-none d-lg-inline-block">Crea playlist</span>
+          ><p class="buttonLeft">
+            <span class="d-lg-inline-block colorDivLeft me-2"><i class="bi bi-plus-lg p-1 text-black"></i></span
+            ><span class="d-none d-lg-inline-block">Crea playlist</span>
           </p></a
         >
         <a class="text-decoration-none" href="#"
-          ><p class="text-white">
-            <i class="bi bi-heart-fill me-2"></i><span class="d-none d-lg-inline-block">Brani che ti piacciono</span>
+          ><p class="buttonLeft">
+            <span class="d-lg-inline-block colorDivLeft1 me-2"
+              ><i class="bi bi-heart-fill p-1 text-white" style="padding-left: 3px"></i></span
+            ><span class="d-none d-lg-inline-block">Brani che ti piacciono</span>
           </p></a
         >
         <a class="text-decoration-none" href="#"
-          ><p class="text-white">
-            <i class="bi bi-bookmark me-2"></i><span class="d-none d-lg-inline-block">I tuoi episodi</span>
+          ><p class="buttonLeft">
+            <span class="d-lg-inline-block colorDivLeft2 me-2"
+              ><i class="bi bi-bookmark-fill p-1 colorILeft2" style="padding-left: 3px"></i></span
+            ><span class="d-none d-lg-inline-block">I tuoi episodi</span>
           </p></a
         >
       </div>
 
       <div id="favourite"></div>
     </div>
+
     <div class="bg-dark container pt-2 overflow-auto vh-100">
+      <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0 toolbar pt-2">
+        <div class="pt-2">
+          <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
+          <i class="bi bi-arrow-right-circle-fill text-white"></i>
+        </div>
+
+        <div>
+          <button
+            class="btn align-self-start d-none d-xl-inline-block"
+            type="button"
+            data-bs-target="#staticBackdrop"
+            aria-controls="staticBackdrop"
+            onclick="aggiungiListaAmici()"
+            id="amici"
+          >
+            <i class="bi bi-people-fill text-white"></i>
+          </button>
+
+          <div class="dropdown d-inline-block">
+            <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img
+                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+                alt=""
+                class="rounded-circle imgProfileHome"
+              />
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item text-decoration-none" href="#">Account</a></li>
+              <li><a class="dropdown-item text-decoration-none" href="#">Profilo</a></li>
+              <li><a class="dropdown-item text-decoration-none" href="#">Sessione privata</a></li>
+              <li><a class="dropdown-item text-decoration-none" href="#">Impostazioni</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item text-decoration-none" href="#">Esci</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <h2 class="text-white">Cerca</h2>
       <div class="d-flex mb-4 justify-content-center justify-content-sm-start">
         <form class="d-flex" role="search">
@@ -457,6 +500,31 @@
       </div>
     </div>
 
+    <div class="bg-black vh-100 w-25 m-2 d-none text-white" id="listaAmici">
+      <div class="bg-dark p-2 m-2 mt-5 rounded">
+        <div class="d-flex justify-content-between mb-5">
+          <h4 class="d-lg-inline-block">Attività amici</h4>
+          <div>
+            <i class="bi bi-person-plus-fill me-2"></i>
+            <i class="bi bi-x-lg" onclick="rimuoviListaAmici()"></i>
+          </div>
+        </div>
+        <div class="d-flex mb-5">
+          <img
+            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+            alt=""
+            class="rounded-circle imgProfile me-2"
+          />
+
+          <div class="amici">
+            <h6 class="mb-0">Flavio De Angelis</h6>
+            <p class="mb-0">mentalitè <i class="bi bi-dot"></i> baby gang</p>
+            <p><i class="bi bi-disc"></i> EPII</p>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

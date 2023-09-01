@@ -23,7 +23,7 @@ const loadHome = async () => {
 
   <div>
   <button
-    class="btn align-self-start"
+    class="btn align-self-start d-none d-xl-inline-block"
     type="button"
     data-bs-target="#staticBackdrop"
     aria-controls="staticBackdrop"
@@ -57,14 +57,14 @@ const loadHome = async () => {
 </div>
 <div class="bg-dark p-2 rounded">
 
-<div class="text-white d-md-flex mt-5 bg-black rounded container d-none justify-content-between" id="head">
+<div class="text-white d-xl-flex mt-5 rounded container d-none justify-content-between" id="head">
        
           <div class="d-flex">
             <a href="#" class="text-decoration-none"
               ><img
                 src="https://ilbenessereolistico.com/wp-content/uploads/2018/10/Viola-1200x675.jpeg"
                 alt=""
-                style="width: 200px; height: 200px"
+                style="width: 250px; height: 250px"
                 class="m-4"
                 id="imgHead"
             /></a>
@@ -101,7 +101,7 @@ const loadHome = async () => {
     document.getElementById("imgHead").src = albumObj.cover;
     const divHead = document.getElementById("headDetails");
     divHead.innerHTML = ` <p>ALBUM</p>
-    <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><h2 class="fs-1">${albumObj.title}</h2></a>
+    <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><h2 class="titleHead">${albumObj.title}</h2></a>
     <a href="./index.html?artistId=${albumObj.contributors[0].id}" class="text-decoration-none"><p>${albumObj.contributors[0].name}</p></a>
     <p>Ascolta il nuovo album di <a href="./index.html?artistId=${albumObj.contributors[0].id}" class="text-decoration-none"> ${albumObj.contributors[0].name} </a></p>
     <button class="btn btn-success rounded-pill px-4 py-2">Play</button>
@@ -138,12 +138,12 @@ const loadHome = async () => {
 <div class="col-6 col-lg-4 text-white">
 <div class="card mb-3 text-white cardH">
   <div class="row g-0">
-    <div class="col-md-4">
-    <a href="./index.html?albumId=${idBohemian}" class="text-decoration-none"> <img src="${albumObj.cover}" class="img-fluid rounded-start" alt="..." /> </a>
+    <div class="col-4">
+    <a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"> <img src="${albumObj6.cover}" class="img-fluid rounded-start" alt="..." /> </a>
     </div>
-    <div class="col-md-8">
+    <div class="col-8">
       <div class="card-body">
-      <a href="./index.html?albumId=${idBohemian}" class="text-decoration-none"> <h5 class="card-title">${albumObj.title}</h5> </a>
+      <a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"> <h5 class="card-title">${albumObj6.title}</h5> </a>
       </div>
     </div>
   </div>
@@ -152,12 +152,12 @@ const loadHome = async () => {
 <div class="col-6 col-lg-4 text-white">
 <div class="card mb-3 cardH">
   <div class="row g-0">
-    <div class="col-md-4">
-    <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"> <img src="${albumObj1.cover}" class="img-fluid rounded-start" alt="..." /></a>
+    <div class="col-4">
+    <a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"> <img src="${albumObj7.cover}" class="img-fluid rounded-start" alt="..." /></a>
     </div>
-    <div class="col-md-8">
+    <div class="col-8">
       <div class="card-body">
-      <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"> <h5 class="card-title">${albumObj1.title}</h5></a>
+      <a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"> <h5 class="card-title">${albumObj7.title}</h5></a>
       </div>
     </div>
   </div>
@@ -166,10 +166,10 @@ const loadHome = async () => {
 <div class="col-6 col-lg-4 text-white">
 <div class="card mb-3 cardH">
   <div class="row g-0">
-    <div class="col-md-4">
+    <div class="col-4">
       <a href="./index.html?albumId=${idTheEminemShow}" class="text-decoration-none"><img src="${albumObj2.cover}" class="img-fluid rounded-start" alt="..." /></a>
     </div>
-    <div class="col-md-8">
+    <div class="col-8">
       <div class="card-body">
         <a href="./index.html?albumId=${idTheEminemShow}" class="text-decoration-none"><h5 class="card-title">${albumObj2.title}</h5></a>
       </div>
@@ -180,10 +180,10 @@ const loadHome = async () => {
 <div class="col-6 col-lg-4 text-white">
 <div class="card mb-3 cardH">
   <div class="row g-0">
-    <div class="col-md-4">
+    <div class="col-4">
      <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"> <img src="${albumObj3.cover}" class="img-fluid rounded-start" alt="..." /></a>
     </div>
-    <div class="col-md-8">
+    <div class="col-8">
       <div class="card-body">
        <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"> <h5 class="card-title">${albumObj3.title}</h5></a>
       </div>
@@ -194,10 +194,10 @@ const loadHome = async () => {
 <div class="col-6 col-lg-4 text-white">
 <div class="card mb-3 cardH">
   <div class="row g-0">
-    <div class="col-md-4">
+    <div class="col-4">
      <a href="./index.html?albumId=${idScorpion}" class="text-decoration-none"> <img src="${albumObj4.cover}" class="img-fluid rounded-start" alt="..." /></a>
     </div>
-    <div class="col-md-8">
+    <div class="col-8">
       <div class="card-body">
        <a href="./index.html?albumId=${idScorpion}" class="text-decoration-none"> <h5 class="card-title">${albumObj4.title}</h5></a>
       </div>
@@ -208,10 +208,10 @@ const loadHome = async () => {
 <div class="col-6 col-lg-4 text-white">
 <div class="card mb-3 cardH">
   <div class="row g-0">
-    <div class="col-md-4">
+    <div class="col-4">
       <a href="./index.html?albumId=${idXXX}" class="text-decoration-none"><img src="${albumObj5.cover}" class="img-fluid rounded-start" alt="..." /></a>
     </div>
-    <div class="col-md-8">
+    <div class="col-8">
       <div class="card-body">
        <a href="./index.html?albumId=${idXXX}" class="text-decoration-none"> <h5 class="card-title">${albumObj5.title}</h5></a>
       </div>
@@ -222,7 +222,7 @@ const loadHome = async () => {
 
     const rowAltroCheTiPiace = document.getElementById("rowAltroCheTiPiace");
     rowAltroCheTiPiace.innerHTML = `              
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
   <a href="./index.html?albumId=${idXXX}" class="text-decoration-none"><img src="${albumObj5.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
@@ -231,7 +231,7 @@ const loadHome = async () => {
   </div>
 </div>
 </div>
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
   <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"><img src="${albumObj3.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
@@ -240,7 +240,7 @@ const loadHome = async () => {
   </div>
 </div>
 </div>
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
   <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"><img src="${albumObj1.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
@@ -249,7 +249,7 @@ const loadHome = async () => {
   </div>
 </div>
 </div>
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
   <a href="./index.html?albumId=${idScorpion}" class="text-decoration-none"><img src="${albumObj4.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
@@ -261,7 +261,7 @@ const loadHome = async () => {
 
     const rowConsigliati = document.getElementById("rowConsigliati");
     rowConsigliati.innerHTML = `              
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
   <a href="./index.html?albumId=${idBohemian}" class="text-decoration-none"><img src="${albumObj.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
@@ -270,7 +270,7 @@ const loadHome = async () => {
   </div>
 </div>
 </div>
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
   <a href="./index.html?albumId=${idTheEminemShow}" class="text-decoration-none"><img src="${albumObj2.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
@@ -279,7 +279,7 @@ const loadHome = async () => {
   </div>
 </div>
 </div>
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
   <a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"><img src="${albumObj6.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
@@ -288,7 +288,7 @@ const loadHome = async () => {
   </div>
 </div>
 </div>
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
   <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><img src="${albumObj9.cover}" class="card-img-top" alt="..." /></a>
   <div class="card-body">
@@ -300,7 +300,7 @@ const loadHome = async () => {
 
     const rowPiùPopolari = document.getElementById("rowPiùPopolari");
     rowPiùPopolari.innerHTML = `              
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
 <a href="./index.html?albumId=${idGemelli}" class="text-decoration-none"><img src="${albumObj8.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
@@ -309,7 +309,7 @@ const loadHome = async () => {
 </div>
 </div>
 </div>
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
 <a href="./index.html?albumId=${idDYSTOPIA}" class="text-decoration-none"><img src="${albumObj3.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
@@ -318,7 +318,7 @@ const loadHome = async () => {
 </div>
 </div>
 </div>
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
 <a href="./index.html?albumId=${idHybridTheory}" class="text-decoration-none"><img src="${albumObj1.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
@@ -327,7 +327,7 @@ const loadHome = async () => {
 </div>
 </div>
 </div>
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
 <a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"><img src="${albumObj7.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
@@ -339,7 +339,7 @@ const loadHome = async () => {
 
     const rowDiMilano = document.getElementById("rowDiMilano");
     rowDiMilano.innerHTML = `              
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
 <a href="./index.html?albumId=${idMilanoDemons}" class="text-decoration-none"><img src="${albumObj6.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
@@ -348,7 +348,7 @@ const loadHome = async () => {
 </div>
 </div>
 </div>
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
 <a href="./index.html?albumId=${idMadreperla}" class="text-decoration-none"><img src="${albumObj7.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
@@ -357,7 +357,7 @@ const loadHome = async () => {
 </div>
 </div>
 </div>
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
 <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><img src="${albumObj9.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
@@ -366,7 +366,7 @@ const loadHome = async () => {
 </div>
 </div>
 </div>
-<div class="col-12 col-lg-3 mb-4 mb-lg-1">
+<div class="col-6 col-lg-3 mb-4 mb-lg-1">
 <div class="card mainCard">
 <a href="./index.html?albumId=${idGemelli}" class="text-decoration-none"><img src="${albumObj8.cover}" class="card-img-top" alt="..." /></a>
 <div class="card-body">
