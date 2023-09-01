@@ -97,22 +97,40 @@
       class="row justify-content-between align-items-center text-white overlay-dark w-100 sticky-lg-bottom fixPlayer"
     >
       <div id="js-player" class="d-flex align-items-center justify-content-start col-4"></div>
+
       <div class="d-flex flex-column align-items-center col-4 text-start">
         <div class="d-flex gap-3 align-items-center">
-          <!-- <i class="bi bi-shuffle"></i>
+          <i class="bi bi-shuffle"></i>
           <i class="bi bi-skip-backward-fill"></i>
-          <i class="bi bi-play-circle-fill fs-3"></i>
+          <i class="bi bi-pause-circle-fill fs-3" id="pause"></i>
+          <i class="bi bi-play-circle-fill fs-3 d-none" id="play"></i>
           <i class="bi bi-skip-forward-fill"></i>
-          <i class="bi bi-repeat"></i> -->
+          <i class="bi bi-repeat position-relative" id="repeat">
+            <span
+              class="position-absolute top-100 start-50 translate-middle pallino bg-success border border-success rounded-circle d-none"
+              id="pallino-repeat"
+            >
+            </span>
+          </i>
+          <audio autoplay="autoplay" id="audio"></audio>
         </div>
-        <div class="d-flex align-items-center gap-2">
-          <audio autoplay="autoplay" id="player" controls="controls"></audio>
-        </div>
+        <div class="d-flex align-items-center gap-2"></div>
       </div>
-      <div class="d-flex gap-2 col-4 justify-content-end">
-        <i class="bi bi-mic-fill"></i>
+      <div class="d-flex gap-2 col-4 justify-content-end align-items-center">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-volume-down fs-2" id="volume-up"></i>
+          <i class="bi bi-volume-mute fs-2 d-none" id="mute"></i>
+          <input type="range" class="w-100" min="0" max="100" id="custom-volume" />
+        </div>
         <i class="bi bi-view-list"></i>
         <i class="bi bi-pc-display"></i>
+      </div>
+      <div class="progressContainer">
+        <span id="current-time"></span>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+        <span id="duration"></span>
       </div>
     </div>
 
@@ -132,10 +150,9 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
-
+    <script src="player.js"></script>
     <script src="script.js"></script>
     <script src="album.js"></script>
-
     <script src="artist.js"></script>
     <script src="app.js"></script>
   </body>
