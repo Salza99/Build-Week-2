@@ -57,14 +57,14 @@ const loadHome = async () => {
 </div>
 <div class="bg-dark p-2 rounded">
 
-<div class="text-white d-md-flex mt-5 bg-black rounded container d-none justify-content-between" id="head">
+<div class="text-white d-md-flex mt-5 rounded container d-none justify-content-between" id="head">
        
           <div class="d-flex">
             <a href="#" class="text-decoration-none"
               ><img
                 src="https://ilbenessereolistico.com/wp-content/uploads/2018/10/Viola-1200x675.jpeg"
                 alt=""
-                style="width: 200px; height: 200px"
+                style="width: 250px; height: 250px"
                 class="m-4"
                 id="imgHead"
             /></a>
@@ -101,7 +101,7 @@ const loadHome = async () => {
     document.getElementById("imgHead").src = albumObj.cover;
     const divHead = document.getElementById("headDetails");
     divHead.innerHTML = ` <p>ALBUM</p>
-    <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><h2 class="fs-1">${albumObj.title}</h2></a>
+    <a href="./index.html?albumId=${idINNOCENTE}" class="text-decoration-none"><h2 class="titleHead">${albumObj.title}</h2></a>
     <a href="./index.html?artistId=${albumObj.contributors[0].id}" class="text-decoration-none"><p>${albumObj.contributors[0].name}</p></a>
     <p>Ascolta il nuovo album di <a href="./index.html?artistId=${albumObj.contributors[0].id}" class="text-decoration-none"> ${albumObj.contributors[0].name} </a></p>
     <button class="btn btn-success rounded-pill px-4 py-2">Play</button>
