@@ -15,8 +15,9 @@ const loadHome = async () => {
   mainContent.innerHTML = `
   <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0 toolbar pt-2">
   <div class="pt-2">
-      <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
-      <i class="bi bi-arrow-right-circle-fill text-white"></i>
+  
+      <i class="rounded-circle bg-dark p-2 bi bi-chevron-left"></i>
+      <i class="rounded-circle bg-dark p-2 bi bi-chevron-right"></i>
     </div>
 
 

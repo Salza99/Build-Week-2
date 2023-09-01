@@ -1,16 +1,16 @@
-const caricaArtista = id => {
+const caricaArtista = (id) => {
   fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + id)
-    .then(response => {
+    .then((response) => {
       return response.json();
     })
-    .then(artistObj => {
+    .then((artistObj) => {
       loadMusic();
       const content = document.getElementById("js-main-content");
       content.innerHTML = `
       <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0 toolbar pt-2">
   <div class="pt-2">
-      <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
-      <i class="bi bi-arrow-right-circle-fill text-white"></i>
+  <i class="rounded-circle bg-dark p-2 bi bi-chevron-left"></i>
+  <i class="rounded-circle bg-dark p-2 bi bi-chevron-right"></i>
     </div>
 
 
@@ -82,10 +82,10 @@ const caricaArtista = id => {
 
       const albumSection = document.getElementById("js-albums-section");
       fetch(artistObj.tracklist)
-        .then(response => {
+        .then((response) => {
           return response.json();
         })
-        .then(artistData => {
+        .then((artistData) => {
           for (let i = 0; i < artistData.data.length; i++) {
             const durata = artistData.data[i].duration;
             let secondi = durata % 60;
@@ -99,7 +99,7 @@ const caricaArtista = id => {
         <div class="row align-items-center justify-content-between mb-2" id="selectedTrack" >
             <div class="d-flex col-8 align-items-center justify-content-start" onclick="loadMusicOnStorage('${artistData.data[i].title}', '${artistData.data[i].album.cover}' ,'${artistObj.name}', '${artistData.data[i].preview}'); loadMusic();">
               <div class="me-2">${i}</div>
-              <div class="me-2"><img src="${artistData.data[i].album.cover}" alt="" height="50px" /></div>
+              <div class="me-2"><a href="./index.html?albumId=${artistData.data[i].album.id}"><img src="${artistData.data[i].album.cover}" alt="" height="50px" /></a></div>
               <div>${artistData.data[i].title}</div>
             </div>
             <div class="col-2">${artistData.data[i].rank}</div>
@@ -108,7 +108,7 @@ const caricaArtista = id => {
                 `;
           }
         })
-        .catch(err => console.log(err));
+        .catch((err) => console.log(err));
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };

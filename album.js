@@ -14,8 +14,8 @@ const loadPageAlbum = async (id) => {
   let main = document.getElementById("js-main-content");
   main.innerHTML = `  <div class="d-flex justify-content-between container-fluid sticky-top end-0 start-0 toolbar">
   <div>
-    <i class="bi bi-arrow-left-circle-fill me-2 text-white"></i>
-    <i class="bi bi-arrow-right-circle-fill text-white"></i>
+  <i class="rounded-circle bg-dark p-2 bi bi-chevron-left"></i>
+  <i class="rounded-circle bg-dark p-2 bi bi-chevron-right"></i>
   </div>
 
 
