@@ -6,7 +6,9 @@ body {
   width: 300px;
 }
 
-.overlay-dark {
+.overlay-dark,
+.toolbar,
+.mobileIcon {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -110,10 +112,6 @@ body {
   margin-left: 100px;
 }
 
-.toolbar {
-  background-color: rgba(0, 0, 0, 0.455);
-}
-
 .img-search {
   border-radius: 12px;
   transform: rotate(25deg);
@@ -141,4 +139,21 @@ body {
 
 .colorILeft2 {
   color: green;
+}
+
+.mobileIcon {
+  position: fixed;
+  bottom: 0;
+}
+
+.fixPlayer {
+  position: fixed;
+  bottom: 68px;
+}
+
+@media (min-width: 992px) {
+  .fixPlayer {
+    position: fixed;
+    bottom: 0px;
+  }
 }/*# sourceMappingURL=style.css.map */
