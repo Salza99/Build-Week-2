@@ -104,8 +104,8 @@ const loadMusic = () => {
     player.innerHTML = `
       <div class="me-2 d-none d-md-inline-block"><img src="${music.albumImg}" alt="" height="50px" /></div>
       <div>
-        <div class="me-2 ">${music.title}</div>
-        <div class=" ">${music.artist}</div>
+        <div class="me-2">${music.title}</div>
+        <div >${music.artist}</div>
       </div>
       `;
     audio.setAttribute("src", `${music.mp3}`);
