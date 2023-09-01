@@ -4,7 +4,9 @@ body {
 #staticBackdrop {
   width: 300px;
 }
-.overlay-dark {
+.overlay-dark,
+.toolbar,
+.mobileIcon {
   background-color: rgba(black, 0.8);
 }
 .fs-title-album {
@@ -95,9 +97,6 @@ body {
   margin-left: 100px;
 }
 
-.toolbar {
-  background-color: rgba(0, 0, 0, 0.455);
-}
 .img-search {
   border-radius: 12px;
   transform: rotate(25deg);
@@ -148,4 +147,43 @@ body {
 .pallino {
   width: 5px;
   height: 5px;
+}
+#head {
+  background-image: linear-gradient(45deg, black, transparent);
+}
+
+.titleHead {
+  font-size: 450%;
+}
+.colorDivLeft {
+  background-color: rgb(208, 206, 206);
+}
+
+.colorDivLeft1 {
+  background-image: linear-gradient(45deg, rgb(120, 0, 248), white);
+  // width: 9%;
+  // height: 9%;
+}
+.colorDivLeft2 {
+  background-color: rgb(10, 70, 10);
+  // width: 9%;
+  // height: 9%;
+}
+.colorILeft2 {
+  color: green;
+}
+.mobileIcon {
+  position: fixed;
+  bottom: 0;
+}
+.fixPlayer {
+  position: fixed;
+  bottom: 68px;
+}
+
+@media (min-width: 992px) {
+  .fixPlayer {
+    position: fixed;
+    bottom: 0px;
+  }
 }

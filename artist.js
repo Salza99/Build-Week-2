@@ -1,9 +1,9 @@
-const caricaArtista = (id) => {
+const caricaArtista = id => {
   fetch("https://striveschool-api.herokuapp.com/api/deezer/artist/" + id)
-    .then((response) => {
+    .then(response => {
       return response.json();
     })
-    .then((artistObj) => {
+    .then(artistObj => {
       loadMusic();
       const content = document.getElementById("js-main-content");
       content.innerHTML = `
@@ -82,10 +82,10 @@ const caricaArtista = (id) => {
 
       const albumSection = document.getElementById("js-albums-section");
       fetch(artistObj.tracklist)
-        .then((response) => {
+        .then(response => {
           return response.json();
         })
-        .then((artistData) => {
+        .then(artistData => {
           for (let i = 0; i < artistData.data.length; i++) {
             const durata = artistData.data[i].duration;
             let secondi = durata % 60;
@@ -108,7 +108,7 @@ const caricaArtista = (id) => {
                 `;
           }
         })
-        .catch((err) => console.log(err));
+        .catch(err => console.log(err));
     })
-    .catch((err) => console.log(err));
+    .catch(err => console.log(err));
 };
