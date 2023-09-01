@@ -104,7 +104,7 @@ const loadPageAlbum = async (id) => {
     // let arrRanks = JSON.stringify(ranks).split("");
     // let array = arrRanks.splice(0, 5, "0");
     // console.log(array);
-    tracksList.innerHTML += `<div  class="d-flex align-items-center justify-content-between justify-content-sm-start" onclick="loadMusicOnStorage('${
+    tracksList.innerHTML += `<div id="selectedTrack" class="d-flex align-items-center justify-content-between justify-content-sm-start" onclick="loadMusicOnStorage('${
       tracce[i].title
     }', '${album.cover}' ,'${album.artist.name}', '${tracce[i].preview}'); loadMusic();">
     <div class="col-1 d-flex flex-column justify-content-center fw-light">${i + 1}</div>
