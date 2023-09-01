@@ -59,7 +59,6 @@ const loadHome = async () => {
 
 <div class="text-white d-md-flex mt-5 bg-black rounded container d-none" id="head">
        
-      
             <a href="#" class="text-decoration-none"
               ><img
                 src="https://ilbenessereolistico.com/wp-content/uploads/2018/10/Viola-1200x675.jpeg"
@@ -77,6 +76,7 @@ const loadHome = async () => {
               <button class="btn btn-success rounded-pill px-4 py-2">Play</button>
               <button class="btn btn-outline-light rounded-pill px-4 py-2 ms-3">Salva</button>
               <i class="bi bi-three-dots ms-3"></i>
+        
 </div>
 
             <button class="btn btn-outline-light rounded-pill px-2 py-1 ms-3 buttonNascondi" onclick="nascondiHead()">Nascondi annunci</button>
